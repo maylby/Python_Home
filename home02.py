@@ -125,7 +125,47 @@
 # # 4 4 -> 2 2
 # # 5 6 -> 2 3
 
+''' Вариант 1 '''
 
+# s = int(input('Input S: ', ))
+# p = int(input('Input P: ', ))
+# # summa = 20
+# # product = 100
+# # s = int(summa)
+# # p = int(product)
+
+# # s = a + b 
+# # b = s - a
+# for a in range(s):
+#     if p == a * (s - a):
+#         b = s - a
+# print(a, b)
+
+''' Вариант 2 '''
+# Код не работает, разобраться
+
+# s = int(input('Input S: ', ))
+# p = int(input('Input P: ', ))
+
+# # x + y = s
+# x = 0
+# y = s - x
+# if x + y == s and x * (s - x) == p: print(x, y)
+# else: x += 1 
+
+
+''' Вариант 3 '''
+# # 01_(C-03) 00:16:30
+# # Решение с семинарского занятия (Алёна Хахина)
+# # "print" выдаёт ошибку
+
+# s = int(input('Input summa S: \n')) # "\n" с переносом значения на новую строку
+# p = int(input('Input product P: \n')) # "\n" с переносом значения на новую строку
+# for x in range(s):
+# 	for y in range(p):
+# 		if s == x + y and p == x * y:
+# print(f'first number = {x}, second number = {y}')
+# print(x, y)
 
 
 ''' Задача 14:
