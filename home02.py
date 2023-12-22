@@ -33,7 +33,7 @@
 # # coins = list() 
 # # coins = list(input()) # проверить правильность формы записи
 # # coins = list('input coins = ', ) # можно ли так записать?
-# print(list(coins)) # вывод на экран введённых данных
+# print(f'coins = {coins}') # вывод на экран введённых данных
 
 # n0 = 0
 # n1 = 0
@@ -41,7 +41,7 @@
 # for i in coins:
 # 	if coins[i] == 0: n0 += 1
 # 	else: n1 += 1
-# if n0 <= n1: print(n0)
+# if n0 < n1: print(n0)
 # else: print(n1)
 
 
@@ -127,8 +127,12 @@
 
 ''' Вариант 1 '''
 
-# s = int(input('Input S: ', ))
-# p = int(input('Input P: ', ))
+# s = int(input('s = ', ))
+# p = int(input('p = ', ))
+
+# # print(f's = {s}')
+# # print(f'p = {p}')
+
 # # summa = 20
 # # product = 100
 # # s = int(summa)
@@ -140,6 +144,7 @@
 #     if p == a * (s - a):
 #         b = s - a
 # print(a, b)
+
 
 ''' Вариант 2 '''
 # Код не работает, разобраться
@@ -169,32 +174,102 @@
 
 
 """ Вариант 4 """
-# 01_(C-03) 00:23:55
-# Эталонное решение задачи из автотеста
+# # 01_(C-03) 00:23:55
+# # Эталонное решение задачи из автотеста
 
-s = int(input('Input summa S: \n')) # Добавил ввод данных 
-p = int(input('Input product P: \n'))
+# s = int(input('Input summa S: \n')) # Добавил ввод данных 
+# p = int(input('Input product P: \n'))
 
-solutions = []
-for i in range(1, 1001):
-	for j in range(1, 1001):
-		if s == i + j and p == i * j:
-			solutions.append((min(i, j), max(i, j)))
-solutions = list(set(solutions))
+# solutions = []
+# for i in range(1, 1001):
+# 	for j in range(1, 1001):
+# 		if s == i + j and p == i * j:
+# 			solutions.append((min(i, j), max(i, j)))
+# solutions = list(set(solutions))
 
-for solution in solutions:
-	print(solution[0], solution[1])
+# for solution in solutions:
+# 	print(solution[0], solution[1])
 
 
 ''' Задача 14:
 
 Требуется вывести все целые степени двойки 
 (т.е. числа вида 2k ), не превосходящие числа N.'''
+# https://autotest.gb.ru/problems/77?lesson_id=391153&_ga=2.121297608.1779182976.1702601239-190608401.1702601239
 
 # Вывести все целые степени числа 2, 
 # (2^0, ... 2^k), где 2^k <= N 
 
 # 10 -> 1 2 4 8
+
+# Пример
+# n=16
+# # Вывод
+# 1
+# 2
+# 4
+# 8
+# 16
+
+''' Вариант 1 '''
+
+# n = int(input('n = ', ))
+# k = 0
+# while 2**k < n: 
+#     print(2**k)
+#     k += 1
+
+
+''' Вариант 2 '''
+# # 01_(C-03) 00:29:45 (Александар Верзун)
+
+# n = int(input('n = ', ))
+# temp = 1
+# count = 1
+
+# while temp <= n:
+# 	print(temp, end = " ")
+# 	temp = 2**count
+# 	count += 1
+
+
+
+'''Задача №13. Общее обсуждение'''
+# 01_(C-03) 00:34:45 (Андрей Лапотько)
+
+"""Уставшие от необычно теплой зимы, жители решили узнать, 
+действительно ли это самая длинная оттепель за всю историю наблюдений за погодой. 
+Они обратились к синоптикам, а те, в свою очередь, 
+занялись исследованиями статистики за прошлые годы. 
+Их интересует, сколько дней длилась самая длинная оттепель. 
+Оттепелью они называют период, в который 
+среднесуточная температура ежедневно превышала 0 градусов Цельсия. 
+
+Написать программу, помогающую синоптикам в работе.
+Пользователь вводит число N – общее количество рассматриваемых дней (1 ≤ N ≤ 100). 
+В следующих строках располагается N целых чисел.
+Каждое число – среднесуточная температура в соответствующий день. 
+Температуры – целые числа и лежат в диапазоне от –50 до 50."""
+
+# # Input: 6 -> -20 30 -40 50 10 -10
+# # Output: 2
+
+# n = int(input())
+# t = []
+# for i in range(n):
+# 	t.append(random.randint(-50, 50)) # "randint" - что это? "ranking" - рейтинг?
+# print(t)
+
+# count1 = 0
+# result = 0
+# for i in range(len(t)):
+# 	if t[i] > 0: count1 += 1
+# 	if result < count1: result = count1
+# 	if t[i] <= 0: count1 = 0
+# 	print(t[i], count1, result)
+# print(result)
+
+
 
 
 # 01:45:00
@@ -214,3 +289,41 @@ for solution in solutions:
 
 # Input: 5 -> 5 1 6 5 9
 # Output: 1 9
+
+''' Вариант 1 '''
+
+# n = int(input()) # количество арбузов
+# mass = floats(input()) # масса арбуза (как в Python обозначают дроби?)
+
+# for i in range(n):
+# 	mass.append(random.randint(1, 10)) # "randint" - что это? "ranking" - рейтинг?
+# print(f'Input: {n} -> {mass}')
+
+# mass = []
+# m = int(mass)
+# max = m
+# min = m
+
+# while n > 0:
+# 	m = int(input())
+# 	if m > max: max = m
+# 	if m < min: min = m
+# 	n -= 1
+# print(f'Output: {min}, {max}')
+
+
+''' Вариант 2 '''
+# # 01_(C-03) 00:34:45 (Андрей Лапотько)
+ 
+# n = int(input())
+# m = []
+# for i in range(n):
+# 	m.append(random.randint(1, 16))
+# print(m)
+
+# max_1 = min_1 = m[0]
+# for i in range(1, len(m)):
+# 	if m[i] > max_1: max_1 = m[i]
+# 	if m[i] < min_1: min_1 = m[i]
+# print('min: {}, max: {}'.format(min_1, max_1))
+	
