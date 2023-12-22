@@ -168,6 +168,24 @@
 # print(x, y)
 
 
+""" Вариант 4 """
+# 01_(C-03) 00:23:55
+# Эталонное решение задачи из автотеста
+
+s = int(input('Input summa S: \n')) # Добавил ввод данных 
+p = int(input('Input product P: \n'))
+
+solutions = []
+for i in range(1, 1001):
+	for j in range(1, 1001):
+		if s == i + j and p == i * j:
+			solutions.append((min(i, j), max(i, j)))
+solutions = list(set(solutions))
+
+for solution in solutions:
+	print(solution[0], solution[1])
+
+
 ''' Задача 14:
 
 Требуется вывести все целые степени двойки 
