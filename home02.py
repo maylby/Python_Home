@@ -29,20 +29,86 @@
 
 ''' Варианты 1 (for) '''
 
-coins = [0, 1, 0, 1, 1, 0] # [] # вводимый список
-# coins = list() 
-# coins = list(input()) # проверить правильность формы записи
-# coins = list('input coins = ', ) # можно ли так записать?
-print(list(coins)) # вывод на экран введённых данных
+# coins = [0, 1, 0, 1, 1, 0] # [] # вводимый список
+# # coins = list() 
+# # coins = list(input()) # проверить правильность формы записи
+# # coins = list('input coins = ', ) # можно ли так записать?
+# print(list(coins)) # вывод на экран введённых данных
 
-n0 = 0
-n1 = 0
+# n0 = 0
+# n1 = 0
 
-for i in coins:
-	if coins[i] == 0: n0 += 1
-	else: n1 += 1
-if n0 <= n1: print(n0)
-else: print(n1)
+# for i in coins:
+# 	if coins[i] == 0: n0 += 1
+# 	else: n1 += 1
+# if n0 <= n1: print(n0)
+# else: print(n1)
+
+
+''' Варианты 2 (while) '''
+# код не работает, на выходе выдаёт 0, разобраться
+
+# coins = [0, 1, 0, 1, 1, 0]
+# print(list(coins))
+# # coins = list() 
+# n = len(coins) 
+# a = 0
+# b = 0
+
+# while n > 0:
+# 	if coins == 0: a += 1
+# 	if coins == 1: b += 1
+# 	n -= 1 
+# if a < b: print(a)
+# else: print(b)
+
+
+''' Вариант 3.1 '''
+# # 01_(C-03) 00:14:30
+# # Решение с семинарского занятия (Алёна Хахина)
+
+# coins = [0, 1, 0, 1, 1, 0]
+# print(f'coins = {coins}')
+# # coins = []
+# print(coins.count(0) if coins.count(0) < coins.count(1) else coins.count(1))
+
+
+''' Вариант 3.2 '''
+# # Изменен мной
+
+# coins = [0, 1, 0, 1, 1, 0]
+# print(f'coins = {coins}')
+
+# if coins.count(0) < coins.count(1): print(coins.count(0))
+# else: print(coins.count(1))
+
+
+
+''' Вариант 4.1 '''
+# # 01_(C-03) 00:26:30 (Александар Верзун)
+
+# coins = [0, 1, 0, 1, 0, 0]
+# print(f'coins = {coins}')
+
+# res = [coins.count(0), coins.count(1)]
+# print(min(res))
+
+
+
+''' Вариант 4.2 '''
+# # 01_(C-03) 00:27:40 (Александар Верзун)
+
+# coins = [0, 1, 0, 1, 0, 0]
+# print(coins)
+# a = 0
+# b = 0
+
+# for i in coins:
+# 	if i == 0: a += 1
+# 	else: b += 1
+# if a < b: print(a)
+# else: print(b)
+
 
 
 ''' Задача 12: 
@@ -59,17 +125,7 @@ else: print(n1)
 # # 4 4 -> 2 2
 # # 5 6 -> 2 3
 
-''' Пояснение решения задачи '''
-# summa = 20
-# product = 100
-# s = int(summa)
-# p = int(product)
 
-# a + b = s
-# b = s - a
-# for a in range(20):
-#     if p == a * (s - a):
-#         b = s - a
 
 
 ''' Задача 14:
