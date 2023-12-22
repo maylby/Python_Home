@@ -27,6 +27,23 @@
 # 5 -> 1 0 1 1 0
 # 2
 
+''' Варианты 1 (for) '''
+
+coins = [0, 1, 0, 1, 1, 0] # [] # вводимый список
+# coins = list() 
+# coins = list(input()) # проверить правильность формы записи
+# coins = list('input coins = ', ) # можно ли так записать?
+print(list(coins)) # вывод на экран введённых данных
+
+n0 = 0
+n1 = 0
+
+for i in coins:
+	if coins[i] == 0: n0 += 1
+	else: n1 += 1
+if n0 <= n1: print(n0)
+else: print(n1)
+
 
 ''' Задача 12: 
 
