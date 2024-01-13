@@ -106,25 +106,41 @@
 https://uchet-jkh.ru/i/napisite-programmu-dlya-poiska-elementa-v-massive-blizaisego-po-velicine-k-zadannomu-cislu/ 
 """
 
-numbers = [2, 5, 9, 12, 17]
-print(f'numbers = {numbers}')
-# target = 10
-target = int(input('target = '))
-closest = None
-closest_diff = None
+# numbers = [2, 5, 9, 12, 17]
+# print(f'numbers = {numbers}')
+# # target = 10
+# target = int(input('target = '))
+# closest = None
+# closest_diff = None
 
-for number in numbers:
-	diff = abs(number - target)
-	if closest_diff is None or diff < closest_diff:
-		closest = number
-		closest_diff = diff
-print(closest)
+# for number in numbers:
+# 	diff = abs(number - target)
+# 	if closest_diff is None or diff < closest_diff:
+# 		closest = number
+# 		closest_diff = diff
+# print(closest)
 
+
+"""
+Вариант 3
+
+(Поиск ближайшего по величине числа в списке)
+"""
+# https://ru.stackoverflow.com/questions/773869/
+
+l = [5, 78, 45, 12, 56, 99]
+print('list =', l)
+k = int(input('k = '))
+
+def nearest(lst, target):
+  return min(lst, key = lambda x: abs(x-target))
+
+print(nearest(l, k))
 
 
 
 """ Задача 3 (20) """ 
-# <https://autotest.gb.ru/problems/23?lesson_id=391154&_ga=2.41176354.1648384661.1703691758-1734585693.1703049693>
+# https://autotest.gb.ru/problems/23?lesson_id=391154&_ga=2.41176354.1648384661.1703691758-1734585693.1703049693
 
 """
 В настольной игре Скрабл (Scrabble) каждая буква имеет определенную ценность. 
