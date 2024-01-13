@@ -70,32 +70,56 @@
 (С-04; 00:17:40 - Андрей Лопатько)
 '''
 
-n = int(input('Input quantity number: '))
-list_1 = [] # для сохранения созданного списка (массива)
-from random import randint # без "импорта" 'randint' функция не работает 
-for i in range(n):
-    list_1.append(randint(-10, 10)) # Если в промежутке (-10, 10) 
-                                    # заменить '-10' на другое число, то результат поиска 
-                                    # ближайшего числа к заданному числу 'k' 
-                                    # выдаёт ошибочные значения
-print(f'list_1 = {list_1}')
+# n = int(input('Input quantity number: '))
+# list_1 = [] # для сохранения созданного списка (массива)
+# from random import randint # без "импорта" 'randint' функция не работает 
+# for i in range(n):
+#     list_1.append(randint(-10, 10)) # Если в промежутке (-10, 10) 
+#                                     # заменить '-10' на другое число, то результат поиска 
+#                                     # ближайшего числа к заданному числу 'k' 
+#                                     # выдаёт ошибочные значения
+# print(f'list_1 = {list_1}')
 
-k = int(input('k = '))
+# k = int(input('k = '))
 
-min1 = abs(k - list_1[0]) # Функция 'abs()' возвращает абсолютное значение заданного числа: 
-                          # - Целые числа — целочисленное абсолютное значение; 
-                          # - Числа с плавающей точкой — абсолютное значение с плавающей точкой; 
-                          # - Комплексные числа — величина числа.
-result = list_1[0]
-for i in range(1, len(list_1)):
-    if (k - list_1[i]) < min1: 
-        min1 = abs(k - list_1[i])
-        result = list_1[i]
-print(result) # Как вернуть два числа, если минимумы совпадают? 
-              # Пример:
-              # list_1 = [10, 9, 2, -10, 4]
-              # k = 3
-              # 4 <- выдача || реальный результат -> 2 и 4
+# min1 = abs(k - list_1[0]) # Функция 'abs()' возвращает абсолютное значение заданного числа: 
+#                           # - Целые числа — целочисленное абсолютное значение; 
+#                           # - Числа с плавающей точкой — абсолютное значение с плавающей точкой; 
+#                           # - Комплексные числа — величина числа.
+# result = list_1[0]
+# for i in range(1, len(list_1)):
+#     if (k - list_1[i]) < min1: 
+#         min1 = abs(k - list_1[i])
+#         result = list_1[i]
+# print(result) # Как вернуть два числа, если минимумы совпадают? 
+#               # Пример:
+#               # list_1 = [10, 9, 2, -10, 4]
+#               # k = 3
+#               # 4 <- выдача || реальный результат -> 2 и 4
+
+
+"""
+Вариант 2
+
+(сравнение модуля разности между элементами списка 
+и заданным числом для нахождения наименьшей разницы)
+https://uchet-jkh.ru/i/napisite-programmu-dlya-poiska-elementa-v-massive-blizaisego-po-velicine-k-zadannomu-cislu/ 
+"""
+
+numbers = [2, 5, 9, 12, 17]
+print(f'numbers = {numbers}')
+# target = 10
+target = int(input('target = '))
+closest = None
+closest_diff = None
+
+for number in numbers:
+	diff = abs(number - target)
+	if closest_diff is None or diff < closest_diff:
+		closest = number
+		closest_diff = diff
+print(closest)
+
 
 
 
