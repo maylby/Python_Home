@@ -108,7 +108,6 @@ https://uchet-jkh.ru/i/napisite-programmu-dlya-poiska-elementa-v-massive-blizais
 
 # numbers = [2, 5, 9, 12, 17]
 # print(f'numbers = {numbers}')
-# # target = 10
 # target = int(input('target = '))
 # closest = None
 # closest_diff = None
@@ -128,14 +127,14 @@ https://uchet-jkh.ru/i/napisite-programmu-dlya-poiska-elementa-v-massive-blizais
 """
 # https://ru.stackoverflow.com/questions/773869/
 
-l = [5, 78, 45, 12, 56, 99]
-print('list =', l)
-k = int(input('k = '))
+# l = [5, 78, 45, 12, 56, 99]
+# print('list =', l)
+# k = int(input('k = '))
 
-def nearest(lst, target):
-  return min(lst, key = lambda x: abs(x-target))
+# def nearest(lst, target):
+#   return min(lst, key = lambda x: abs(x-target))
 
-print(nearest(l, k))
+# print(nearest(l, k))
 
 
 
