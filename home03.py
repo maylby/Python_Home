@@ -19,6 +19,34 @@
 # k = 3
 # # 1
 
+''' Решение:
+
+Вариант 1 
+(решение с применением метода 'count')
+'''
+
+list_1 = [1, 2, 3, 4, 5]
+k = 3
+
+print(list_1)
+print(k)
+print(list_1.count(k)) # метод 'count', встроен в функционал Pyhton 
+
+
+'''
+Вариант 2 (алгоритмическое решение)
+'''
+
+list_1 = [1, 2, 3, 4, 5]
+k = 3
+print(list_1)
+print(k)
+
+count = 0
+for i in list_1:
+	if i == k: count += 1
+print(count)
+
 
 
 """ Задача 2 (18) """
