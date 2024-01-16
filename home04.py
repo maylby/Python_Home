@@ -35,3 +35,16 @@ m - кол-во элементов второго множества.
 """
 # 4 -> 1 2 3 4
 # 9
+
+n = int(input('Input quantity numbers: '))
+arr = []
+
+from random import randint 
+for i in range(n):
+    arr.append(randint(1, 10)) 
+print(f'{n} -> {arr}')
+
+count = list()
+for i in range(len(arr)):
+    count.append(arr[i-2] + arr[i-1] + arr[i])
+print('max =', max(count))
