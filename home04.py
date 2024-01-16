@@ -11,13 +11,37 @@ n - кол-во элементов первого множества.
 m - кол-во элементов второго множества. 
 Затем пользователь вводит сами элементы множеств.
 """
-# 11 6
-# 2 4 6 8 10 12 10 8 6 4 2
-# 3 6 9 12 15 18
-# 6 12
+# # 11 6
+# # 2 4 6 8 10 12 10 8 6 4 2
+# # 3 6 9 12 15 18
+# # 6 12
+
+# list_n = '2 4 6 8 10 12 10 8 6 4 2'
+# list_m = '3 6 9 12 15 18 2'
+# # print(arr_n.split())
+# n = print(len(list_n.split()), end = " ")
+# m = print(len(list_m.split()))
+# print(list_n)
+# print(list_m)
+
+# set_n = set(list_n.split())
+# set_m = set(list_m.split())
+# # print(set_n)
+# # print(set_m)
+
+# if set_n != set_m:
+#     # result = sorted(set_n.intersection(set_m))  # 'intersection' - поиск 
+#                                                 # пересечения множеств
+#     result = sorted(set_n & set_m)  # '&' - амперсент, другой способ 
+#                                     # поиска пересечения множеств
+#     print(*result) # Как вывести значения в порядке возрастания?
+
+
 
 """
 Задача 24: 
+'''
+'''
 В фермерском хозяйстве в Карелии выращивают чернику. 
 Она растет на круглой грядке, причем кусты высажены только по окружности. 
 Таким образом, у каждого куста есть ровно два соседних. 
@@ -33,18 +57,45 @@ m - кол-во элементов второго множества.
 которое может собрать за один заход собирающий модуль, 
 находясь перед некоторым кустом заданной во входном файле грядки.
 """
-# 4 -> 1 2 3 4
-# 9
+# # 4 -> 1 2 3 4
+# # 9
 
+# n = int(input('Input quantity numbers: '))
+# arr = []
+
+# from random import randint 
+# for i in range(n):
+#     arr.append(randint(1, 10)) 
+# print(f'{n} -> {arr}')
+
+# # count = list()
+# # for i in range(len(arr1)):
+# #     count.append(arr1[i-2] + arr1[i-1] + arr1[i])
+# # print('max =', max(count))
+
+
+# 00:34:00
+''' 
+Вариант 2 (цикл 'while')
+(Генадий Ионов)
+'''
 n = int(input('Input quantity numbers: '))
-arr = []
+arr = [] 
 
-from random import randint 
+from random import randint # вставил рандомный ввод
 for i in range(n):
     arr.append(randint(1, 10)) 
 print(f'{n} -> {arr}')
 
-count = list()
-for i in range(len(arr)):
-    count.append(arr[i-2] + arr[i-1] + arr[i])
-print('max =', max(count))
+temp = 0
+count = 0
+maxNum = 0
+
+while count < len(arr):
+    temp = arr.pop(-1)  # <- объединил в одну строку 
+                        # temp = arr[-1] и arr.pop(-1)
+    arr.insert(0, temp)
+    count += 1
+    a = arr[i-2] + arr[i-1] + arr[i] # заменил цифры (1,2,3) на индекс (i)
+    if a > maxNum: maxNum = a
+print(maxNum)
