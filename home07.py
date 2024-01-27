@@ -36,7 +36,8 @@
 Пример
 '''
 # На входе:
-# print_operation_table(lambda x, y: x * y, 3, 3)
+# print_operation_table = list(lambda x, y: x * y, 3, 3) 
+# print(print_operation_table)
 
 # На выходе:
 # 1 2 3
@@ -107,17 +108,16 @@
 Для пустого набора объектов, функция должна возвращать True. 
 Аргумент characteristic - это функция, которая 
 принимает объект и вычисляет его характеристику.
+
+
+Решение
 """
 
-# # Ввод: 
-# values = [0, 2, 10, 6] 
-# if same_by(lambda x: x % 2, values): # Что не так с записью фукции?
-#                                      # Применить фильтр (см. семинар 7)
-#                                      # отфильтруется правильно, то 
-#                                      # длина списка перед фильтрацией 
-#                                      # будет равна длине списка после неё
-#  print('same')
-# else: print('different')
-      
-# # Вывод:
-# 'same'
+values = [0, 2, 10, 6] 
+same_by = list(filter(lambda x: x % 2 == 0, values))
+print('Original:', values)
+print('Filtered:', same_by)
+
+if same_by == values: print('same')
+else: print('different')
+
