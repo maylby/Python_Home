@@ -36,13 +36,31 @@
 Пример
 '''
 # На входе:
-# print_operation_table = list(lambda x, y: x * y, 3, 3) 
-# print(print_operation_table)
+
 
 # На выходе:
 # 1 2 3
 # 2 4 6 
 # 3 6 9
+
+""" 
+Решение
+"""
+# num_rows = int(input('Number rows: '))
+# if num_rows <= 2: 
+#     print('Error!') 
+# num_columns = int(input('Number columns: '))
+
+# print_operation_table = list(lambda x, y: x * y, num_rows, num_columns) # какую фнкцию применить?
+# print(print_operation_table)
+
+number = 0
+for number in range(10):
+    number = number + 1
+if number == 5: break 
+print('Number is ' + str(number))
+print('Out of loop')
+
 
 
 ''' Задача 2 '''
@@ -112,12 +130,11 @@
 
 Решение
 """
+# values = [0, 2, 10, 6] 
+# same_by = list(filter(lambda x: x % 2 == 0, values))
+# print('Original:', values)
+# print('Filtered:', same_by)
 
-values = [0, 2, 10, 6] 
-same_by = list(filter(lambda x: x % 2 == 0, values))
-print('Original:', values)
-print('Filtered:', same_by)
-
-if same_by == values: print('same')
-else: print('different')
+# if same_by == values: print('same')
+# else: print('different')
 
