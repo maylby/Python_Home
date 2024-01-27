@@ -36,7 +36,7 @@
 Пример
 '''
 # На входе:
-
+# print_operation_table(lambda x, y: x * y)
 
 # На выходе:
 # 1 2 3
@@ -46,20 +46,15 @@
 """ 
 Решение
 """
-# num_rows = int(input('Number rows: '))
-# if num_rows <= 2: 
-#     print('Error!') 
-# num_columns = int(input('Number columns: '))
+num_rows = int(input('Number rows: '))
+if num_rows <= 2: 
+    print('Error!') 
+    # break # VSCode не позволяет воспользоваться оператором "break"
+num_columns = int(input('Number columns: '))
 
-# print_operation_table = list(lambda x, y: x * y, num_rows, num_columns) # какую фнкцию применить?
-# print(print_operation_table)
+print_operation_table = list(lambda x, y: x * y, num_rows, num_columns) # какую фнкцию применить?
+print(print_operation_table)
 
-number = 0
-for number in range(10):
-    number = number + 1
-if number == 5: break 
-print('Number is ' + str(number))
-print('Out of loop')
 
 
 
