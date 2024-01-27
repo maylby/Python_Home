@@ -33,3 +33,19 @@ if number == 5:
     # continue # VSCode не позволяет воспользоваться оператором "continue"
 print('Number is ' + str(number))
 print('Out of loop')
+
+
+'''
+Оператор pass
+
+При возникновении внешнего фактора оператор pass 
+устраняет любое влияние этого фактора на обработку кода. 
+Код обрабатывается до тех пор, пока не появится break или другой оператор.
+'''
+number = 0
+for number in range(10):
+    number = number + 1
+if number == 5:
+    pass
+print('Number is ' + str(number))
+print('Out of loop')
