@@ -2,7 +2,9 @@
 
 ''' 
 ОПЕРАТОРЫ BREAK, CONTINUE И PASS В ЦИКЛАХ PYTHON
-
+'''
+# https://www.8host.com/blog/operatory-break-continue-i-pass-v-ciklax-python-3/
+'''
 Оператор break 
 
 В Python оператор break позволяет прервать цикл 
