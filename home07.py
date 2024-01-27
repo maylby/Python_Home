@@ -49,7 +49,7 @@
 num_rows = int(input('Number rows: '))
 if num_rows <= 2: 
     print('Error!') 
-    # break # VSCode не позволяет воспользоваться оператором "break"
+    # break # VSCode не доволен оператором "break"
 num_columns = int(input('Number columns: '))
 
 print_operation_table = list(lambda x, y: x * y, num_rows, num_columns) # какую фнкцию применить?
