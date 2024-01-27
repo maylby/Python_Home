@@ -5,11 +5,13 @@
 
 ''' Задача 1 '''
 # https://autotest.gb.ru/problems/83?lesson_id=391158&_ga=2.55648939.1223630724.1705653773-1736153193.1704617193
-'''
-print_operation_table
 
+# print_operation_table
+'''
 Напишите функцию 
-print_operation_table(operation, num_rows, num_columns), 
+'''
+# print_operation_table(operation, num_rows, num_columns), 
+'''
 которая принимает в качестве аргумента функцию, 
 вычисляющую элемент по номеру строки и столбца. 
 По умолчанию номер столбца и строки = 9.
