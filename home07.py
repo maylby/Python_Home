@@ -119,6 +119,31 @@ print_operation_table(lambda x, y: x * y, num_rows, num_columns)
 # то 'max' списка будет равен 'min' списка
 
 
+'''
+Решение
+'''
+stroka = 'пара-ра-рам тарам-пам-пам па-ра-па-дам'
+list_1 = stroka.split(" ")
+glasny = ['а','я','о','ё','у','ю','ы','и','э','е']
+res = list()
+def puh():
+    if len(list_1) == 1: return "Фраз должно быть больше одной"
+    else:
+        for i in list_1:
+            count = 0
+            for j in i:
+                if j in glasny:
+                    count += 1
+            res.append(count)
+            
+        if len(res) == res.count(res[0]): # 1-й вариант сравнения
+        # if len(set(res)) == 1: # 2-й вариант сравнения
+            return 'Парам пам-пам'
+        return 'Пам парам'
+    
+print(puh())
+
+
 
 """
 Дополниетльные задания с семинара 7
