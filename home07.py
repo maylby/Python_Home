@@ -47,14 +47,26 @@
 Решение
 """
 num_rows = int(input('Number rows: '))
-if num_rows <= 2: 
-    print('Error!') 
-    # break # VSCode не доволен оператором "break"
 num_columns = int(input('Number columns: '))
 
-print_operation_table = list(lambda x, y: x * y, num_rows, num_columns) # какую фнкцию применить?
-print(print_operation_table)
+def print_operation_table(operation, num_rows, num_columns): # 'def' означает "функция"
+    
+    res = []
+    if num_rows < 2: 
+        print('Error!') 
+        # break # VSCode не доволен оператором "break"
+    else:
+        for i in range(1, num_rows + 1):
+            for j in range(1, num_columns + 1):
+                res.append(operation(i, j))
 
+            print(*res) # вариант вывода 1
+            res = []
+        
+        # for i in range(0, len(res), num_columns):
+        #     print(*res[0 + i: num_columns + i]) # вариант вывода 2
+
+print_operation_table(lambda x, y: x * y, num_rows, num_columns)
 
 
 
