@@ -45,8 +45,9 @@ def work_with_phonebook():
                          # получение данных (выбора (?) /Сердюк/)
     phone_book = read_txt('phonebook.txt')
 
-    while (choice != 7):
-
+    while (choice != 8): # изменил 7 на 8
+                         # добавить пункт 7 (Закончить работу)
+                         # выфяснить, что должно быть в пункте 7?
         if choice == 1:
             print_result(phone_book) # tkinter - библиотека (скачать)
                                      # Доп. инфа для любопытных от Сердюка
