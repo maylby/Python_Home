@@ -66,7 +66,7 @@ def work_with_phonebook():
         elif choice == 7:
             print(work_with_phonebook()) # прямой возврат в меню работы с телефонной книгой
                                          # или данное действие нужно совершать через функцию?
-            print(print_menu(work_with_phonebook())) 
+            print(work_out(work_with_phonebook())) 
                                                      
         
         choice = show_menu()
