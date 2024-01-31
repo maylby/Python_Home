@@ -60,8 +60,8 @@ def work_with_phonebook():
             print(change_number(phone_book, last_name, new_number))
 
         elif choice == 4:
-           last_name = input('lastname ') 
-           print(delete_by_lastname(phone_book, last_name))
+            last_name = input('lastname ') 
+            print(delete_by_lastname(phone_book, last_name))
         elif choice == 5:
             new_number = input('new number ')
             print(find_by_number(phone_book, number))
@@ -70,8 +70,8 @@ def work_with_phonebook():
             add_user(phone_book, user_data)
             write_txt('phonebook.txt', phone_book)
         elif choice == 7:
-            print(work_with_phonebook()) # возврат в меню работы с телефонной книгой
-                                         # или данное действие нудно совершать через функцию?
+            print(work_with_phonebook()) # прямой возврат в меню работы с телефонной книгой
+                                         # или данное действие нужно совершать через функцию?
             print(print_menu(work_with_phonebook())) 
                                                      
         
@@ -128,11 +128,12 @@ def read_txt(filename):
     with open(filename, 'r', encoding = 'utf-8') as phb: # 'with' - контекстное меню
             # 'filename' - это 'phonebook.txt' (?)       # 'open' можно прописать без 'with', но
             # нет записи: filename = 'phonebook.txt'     # тогда оператор закрывают командой.
-            # 'r' - режим чтения                         # контестное меню закрытия не требует
-            # 'encoding' - кодировка                     # 'open' закрывается при выходе из цикла 
-            # 'utf-8' - указание кодировки               # в Pyhton цикл определяют отступы,
-            # при использовании кирилицы,                # пока мы правее отступа, мы в цикле,
-            # обязательно указывать кодировку            # сдвиг левее отступа - выход из цикла
+            # 'r' и 'r+' - чтение и перезапись,          # контестное меню закрытия не требует,
+            # без возможности создания нового файла      # закрытие - при выходе из цикла 
+            # 'encoding' - кодировка                     # цикл определяют отступы,
+            # 'utf-8' - указание кодировки               # пока мы правее отступа, мы в цикле,
+            # при использовании кирилицы,                # сдвиг левее отступа - выход из цикла
+            # обязательно указывать кодировку            
             # 'as phb' - открываем переменную,           
             # где записан наш файл .txt
             # имя переменной произвольное 
@@ -163,6 +164,9 @@ def write_txt(filename, phone_book): # функция имеет два знач
                                                             # 'phonebook.txt', но в коде переменная
                                                             # filename нигде не принимает строку
                                                             # в виде: filename = 'phonebook.txt'
+                                                            # 'w' - перезапись
+                                                            # 'w+' - перезапись, чтение 
+                                                            # и создание нового файла
         for i in range(len(phone_book)):
             s = ''
             for v in phone_book[i].values(): # 'v' - значение, которое ищем в наших словарях
