@@ -46,9 +46,11 @@ def work_with_phonebook():
                          # добавить пункт 7 (Закончить работу)
                          # выфяснить, что должно быть в пункте 7?
         if choice == 1:
-            print_result(phone_book) # tkinter - библиотека (скачать)
-                                     # Доп. инфа для любопытных от Сердюка
+            print_result(phone_book) # tkinter - библиотека (скачать) 
+                                     # создание графических приложений на Pyhton
                                      # визуальная часть программы
+                                     # (доп. инфа для любопытных)
+
         elif choice == 2:
             last_name = input('lastname ')
             print(find_by_lastname(phone_book, last_name))
@@ -67,6 +69,11 @@ def work_with_phonebook():
             user_data = input('new data ')
             add_user(phone_book, user_data)
             write_txt('phonebook.txt', phone_book)
+        elif choice == 7:
+            print(work_with_phonebook()) # возврат в меню работы с телефонной книгой
+                                         # или данное действие нудно совершать через функцию?
+            print(print_menu(work_with_phonebook())) 
+                                                     
         
         choice = show_menu()
 
