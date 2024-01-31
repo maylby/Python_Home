@@ -114,7 +114,7 @@ P.S.
 
 def read_txt(filename):
     phone_book = []
-    fields = ['Фамилия', "Имя", "Телефон", "Описание"] # шапка таблицы данных
+    fields = ["Фамилия", "Имя", "Телефон", "Описание"] # шапка таблицы данных
 
     with open(filename, 'r', encoding = 'utf-8') as phb: 
 
