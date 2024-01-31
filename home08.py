@@ -33,11 +33,9 @@
 и Вы должны реализовать функционал для изменения и удаления данных.
 """
 
-
-# 01:14:39
 '''
 Функция записи, хранения и поиска данных телефоных номеров
-Функция work_with_phonebook '''
+work_with_phonebook '''
 
 def work_with_phonebook():
 
@@ -74,7 +72,7 @@ def work_with_phonebook():
         choice = show_menu()
 
 
-# 01:14:45
+
 ''' Функция show_menu '''
 
 def show_menu():
@@ -108,7 +106,7 @@ def show_menu():
 # Питонов, Антон, 777, умеет в Питон
 
 
-# 01:19:15
+
 ''' Функция read_txt'''
 
 def read_txt(filename):
@@ -144,7 +142,7 @@ def read_txt(filename):
     return phone_book # возврат списка
 
 
-# 01:31:45
+
 ''' Функция write_txt'''
 
 def write_txt(filename, phone_book): # функция имеет два значения (имя файла и данные)
@@ -167,5 +165,3 @@ def write_txt(filename, phone_book): # функция имеет два знач
 
 
 work_with_phonebook()
-
-# 01:42:00
