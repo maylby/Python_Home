@@ -46,7 +46,6 @@ def work_with_phonebook():
 
         if choice == 1:
             print_result(phone_book) 
-
         elif choice == 2:
             last_name = input('lastname ')
             print(find_by_lastname(phone_book, last_name))
@@ -54,7 +53,6 @@ def work_with_phonebook():
             last_name = input('lastname ')
             new_number = input('new number ')
             print(change_number(phone_book, last_name, new_number))
-
         elif choice == 4:
             last_name = input('lastname ') 
             print(delete_by_lastname(phone_book, last_name))
