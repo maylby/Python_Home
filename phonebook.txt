@@ -1,4 +1,4 @@
-surname, name, phone, portrait, khi
+last_name, name, number, user_data, khi
 Иванов, Иван, 111, описание Иванова, sub01
 Петров,	Петр, 222, описание Петрова, sub02
 Васичкина, Василиса, 333, описание Васичкиной, sub03

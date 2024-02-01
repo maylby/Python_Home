@@ -113,11 +113,6 @@ P.S.
 # phone = 'Телефон' 
 # portrait = 'Описание'
 
-import txt 
-with open("phonebook.txt", newline = '') as txtfile:
-    reader = txt.DictReader(txtfile, )
-    for row in reader:
-        print(row['surname'], row['name'], row['phone'])
 
 
 
