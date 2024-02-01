@@ -9,7 +9,7 @@
 # with open('phonebook.txt', 'r') as file:
 #   lines = file.readlines()
 
-f = open('phonebook.txt', 'r+')
+f = open('phonebook.txt', 'w+')
 for line in f:
     line
-    print(line)
+print(line)
