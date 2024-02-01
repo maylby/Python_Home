@@ -108,6 +108,17 @@ P.S.
 
 # Питонов, Антон, 777, умеет в Питон
 
+# surname = 'Фамилия'
+# name = 'Имя'
+# phone = 'Телефон' 
+# portrait = 'Описание'
+
+import txt 
+with open("phonebook.txt", newline = '') as txtfile:
+    reader = txt.DictReader(txtfile, )
+    for row in reader:
+        print(row['surname'], row['name'], row['phone'])
+
 
 
 ''' Функция read_txt'''
