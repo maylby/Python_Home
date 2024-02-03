@@ -33,6 +33,20 @@
 """
 
 '''
+Вход / Выход
+'''
+def work_out():
+	picachu = input('Продолжить?\n1-да,\n2-нет\n: ')
+	if picachu == '1': 
+		work_with_phonebook() # функция меню выбора действий (см. внизу)
+	elif picachu == '2':
+		print('Пока!')
+		exit() # это вшитая фукция Pyhton?
+	else: 
+		print('Введена не верная команда')
+		work_out()
+
+'''
 Функция записи, хранения и поиска данных телефоных номеров
 work_with_phonebook '''
 
@@ -50,7 +64,8 @@ def work_with_phonebook():
             last_name = input('lastname ')
             print(find_by_lastname(phone_book, last_name))
         elif choice == 3:
-            last_name = input('lastname ')
+            last_name = input('lastname ')  # Зачем вводить фамилию, 
+                                            # когда поиск идёт по номеру?
             new_number = input('new number ')
             print(change_number(phone_book, last_name, new_number))
         elif choice == 4:
@@ -64,11 +79,11 @@ def work_with_phonebook():
             add_user(phone_book, user_data)
             write_txt('phonebook.txt', phone_book)
         elif choice == 7:
-            print(work_with_phonebook()) # прямой возврат в меню работы с телефонной книгой
+            work_out(choice)
+            # print(phone_book) # прямой возврат в меню работы с телефонной книгой
                                          # или данное действие нужно совершать через функцию?
-            print(work_out(work_with_phonebook())) 
-                                                     
-        
+            
+                                                      
         choice = show_menu()
 
 
@@ -76,15 +91,15 @@ def work_with_phonebook():
 ''' Функция show_menu '''
 
 def show_menu():
-    print("\nВыберите наобходимое действие:\n"
+    print("\nВыберите нeобходимое действие:\n"
           "1. Отобразить весь справочник\n"
           "2. Найти обонента по фамилии\n"
           "3. найти обонента по номеру телефона\n"
           "4. Добавить абонента в справочник\n"
           "5. Изменить данные\n"
           "6. Сохранить справочник в текстовом формате\n"
-          "7. Закончить работу")
-    choice = int(input()) 
+          "7. Закончить работу\n")
+    choice = int(input("Введи номер пкнкта: ")) 
     return choice
 
 
@@ -97,15 +112,13 @@ def show_menu():
 P.S.
 Таблица хранения данных телефонной книги 
 размещается в отдельный текстовый файл 'phonebook.txt',
-где будет хранится список номеров и данные пользователей
+где будет хранится список номеров и данные пользователей.
+
+Файл 'phonebook.txt':
 """
-
 # Иванов, Иван, 111, описание Иванова
-
 # Петров,	Петр,	222,	описание Петрова
-
 # Васичкина, Василиса, 333, описание Васичкиной
-
 # Питонов, Антон, 777, умеет в Питон
 
 # surname = 'Фамилия'
@@ -124,9 +137,9 @@ def read_txt(filename):
 
     with open(filename, 'r', encoding = 'utf-8') as phb: 
 
-        for line in phb: # 'line' - строка таблицы, перебираемую в данных
+        for line in phb: # 'line' - строка таблицы, перебираемая в данных
             record = dict(zip(fields, line.split(','))) # список словарей для телефонной книги
-            dict(( (фамилия, Иванов), (имя, Точка), (номер, 8928) )) # <- словари: (ключ, значение)
+            dict(( (фамилия, Иванов), (имя, Точка), (номер, 8-928) )) # <- словари: (ключ, значение)
                                                                      # 1 строка - 1 человек
         phone_book.append(record) # список данных человека (словари)
     return phone_book # возврат списка
