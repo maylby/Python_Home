@@ -210,7 +210,7 @@ def reade():
 	spros = []
 	with open('phonebook.txt','r', encoding='utf-8') as Phone:
 		for i in Phone.readlines():
-			spros.append(i.strip().split(',')) 	# split - разбивает на символы (?)
+			spros.append(i.strip().split(',')) # split - разбивает на символы (?)
 				                    # strip - обрезает пробелы и '\n',
 						            # т.е. удаляет лишнюю строку 
 						            # в конце списка и пустые строки
