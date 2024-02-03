@@ -33,13 +33,13 @@
 """
 
 '''
-Вход / Выход
+Вход / Выход (дополнение)
 '''
 def work_out():
-	picachu = input('Продолжить?\n1-да,\n2-нет\n: ')
-	if picachu == '1': 
+	cache = input('Продолжить?\n1-да,\n2-нет\n: ')
+	if cache == '1': 
 		work_with_phonebook() # функция меню выбора действий (см. внизу)
-	elif picachu == '2':
+	elif cache == '2':
 		print('Пока!')
 		exit() # это вшитая фукция Pyhton?
 	else: 
@@ -78,8 +78,9 @@ def work_with_phonebook():
             user_data = input('new data ')
             add_user(phone_book, user_data)
             write_txt('phonebook.txt', phone_book)
-        elif choice == 7:
-            work_out(choice)
+        elif choice == 7: 
+             work_out()
+            
             # print(phone_book) # прямой возврат в меню работы с телефонной книгой
                                          # или данное действие нужно совершать через функцию?
             
