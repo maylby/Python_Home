@@ -129,7 +129,7 @@ P.S.
 
 
 
-''' Функция read_txt'''
+''' Функция чтения - read_txt'''
 
 def read_txt(filename):
     phone_book = []
@@ -146,7 +146,7 @@ def read_txt(filename):
 
 
 
-''' Функция write_txt'''
+''' Функция записи - write_txt'''
 
 def write_txt(filename, phone_book): 
     
