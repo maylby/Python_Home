@@ -32,156 +32,242 @@
 и Вы должны реализовать функционал для изменения и удаления данных.
 """
 
-'''
-Функция записи, хранения и поиска данных телефоных номеров
-work_with_phonebook '''
-
-def work_with_phonebook():
-
-    choice = show_menu() # обращение к функции show_menu() /см. ниже/
-                         # получение данных (выбора (?) /Сердюк/)
-    phone_book = read_txt('phonebook.txt')
-
-    while (choice != 8): # изменил 7 на 8
-                         # добавить пункт 7 (Закончить работу)
-                         # выфяснить, что должно быть в пункте 7?
-        if choice == 1:
-            print_result(phone_book) # tkinter - библиотека (скачать) 
-                                     # создание графических приложений на Pyhton
-                                     # визуальная часть программы
-                                     # (доп. инфа для любопытных)
-
-        elif choice == 2:
-            last_name = input('lastname ')
-            print(find_by_lastname(phone_book, last_name))
-        elif choice == 3:
-            last_name = input('lastname ')
-            new_number = input('new number ')
-            print(change_number(phone_book, last_name, new_number))
-
-        elif choice == 4:
-            last_name = input('lastname ') 
-            print(delete_by_lastname(phone_book, last_name))
-        elif choice == 5:
-            new_number = input('new number ')
-            print(find_by_number(phone_book, number))
-        elif choice == 6:
-            user_data = input('new data ')
-            add_user(phone_book, user_data)
-            write_txt('phonebook.txt', phone_book)
-        elif choice == 7:
-            print(work_with_phonebook()) # прямой возврат в меню работы с телефонной книгой
-                                         # или данное действие нужно совершать через функцию?
-            print(print_menu(work_with_phonebook())) 
-                                                     
-        
-        choice = show_menu()
-
-
-
-''' Функция show_menu '''
-
-def show_menu():
-    print("\nВыберите наобходимое действие:\n"
-          "1. Отобразить весь справочник\n"
-          "2. Найти обонента по фамилии\n"
-          "3. найти обонента по номеру телефона\n"
-          "4. Добавить абонента в справочник\n"
-          "5. Изменить данные\n"
-          "6. Сохранить справочник в текстовом формате\n"
-          "7. Закончить работу")
-    choice = int(input()) # 'choice' - переменная, принимающая 
-                          # значение введённое (выбранное?) пользователем и
-                          # переводящая его в цифру (в какую?)
-                          # В цифру порядкового номера данного перечня?
-                          # Как код выделит цифру из символов строки?
-                          # "int(input())" находит цифру?
-                          # А если пользователь не внесёт цифру при вводе?
-                          # Или строки перечня кликабельны и вводятся кликом?
-                          # Где указана данная фукция (кликабельность)?
-    return choice
-
-
-""" 
-Таблица данных (пример)
-
-Таблица в программе (?) должна представлять из себя список кортежей:
-[(фамилия, Иванов), (имя, Иван), (телефон, 111), (описание, друг)]
-
-P.S.
-Таблица хранения данных телефонной книги 
-размещается в отдельный текстовый файл 'phonebook.txt',
-где будет хранится список номеров и данные пользователей
 """
+Телфонный справочник (ДЗ-08)
 
-# Иванов, Иван, 111, описание Иванова
+Вариант 2 (Марина Вершинина)
+"""
+# 00:17:50 (файл lesson10.py)
 
-# Петров,	Петр,	222,	описание Петрова
-
-# Васичкина, Василиса, 333, описание Васичкиной
-
-# Питонов, Антон, 777, умеет в Питон
-
-
-
-''' Функция read_txt'''
-
-def read_txt(filename):
-    phone_book = []
-    fields = ['Фамилия', "Имя", "Телефон", "Описание"] # шапка таблицы данных
-
-    with open(filename, 'r', encoding = 'utf-8') as phb: # 'with' - контекстное меню
-            # 'filename' - это 'phonebook.txt' (?)       # 'open' - без 'with',
-            # (?) нет: filename = 'phonebook.txt'        # закрывают командой.
-            # 'r' - чтение, 'r+' - чтение, перезапись,   # контекстное меню закрытия не требует,
-            # без создания нового файла                  # закрытие - выход из цикла 
-            # 'encoding' - кодировка                     # цикл определяют отступы,
-            # 'utf-8' - указание кодировки               # правее отступа - цикл,
-            # при использовании кирилицы,                # левее отступа - выход из цикла
-            # обязательно указывать кодировку            
-            # 'as phb' - открываем переменную,           
-            # где записан наш файл .txt
-            # имя переменной произвольное 
-            # (phb, x, file_1 и пр.)
-
-        for line in phb: # 'line' - строка таблицы с данными, которые перебираем
-
-            record = dict(zip(fields, line.split(','))) # список словарей телефонной книги
-                    					                # 'zip()' - функция высшего порядка
-                   					                    # 'split' делит 'fields' (таблицу)
-                    					                # на отдельные строки (line)
-                    					                # количество строк любое 
-            
-            dict(( (фамилия, Иванов), (имя, Точка), (номер, 8928) )) # <- словари: (ключ, значение)
-                                                                     # одна строка - 1 человек
-                                                                     # в строке несколько словарей
-
-        phone_book.append(record) # запись данных отдельного человека (строки, словаря) в список
-    return phone_book # возврат списка
+# list_1 = [('Вершинина','Марина','777'),
+# 		  ('Бурков','Евгений','666'),
+# 		  ('tttttt','','22222')]
+# for i in list_1:
+# 	print(*i)
 
 
+'''
+Вход / Выход
+'''
+def outlog():
+	picachu = input('\nПродолжить?\n1-да,\n2-нет\n: ')
+	if picachu == '1': 
+		start() # функция меню выбора действий (см. внизу)
+	elif picachu == '2':
+		print('Пока!\n')
+		exit() # это вшитая фукция Pyhton?
+	else: 
+		print('Введена не верная команда')
+		outlog()
 
-''' Функция write_txt'''
+'''
+Поиск
+'''
+def find_name():
+	list_1 = reade() # вывод найденных данных
+	name = input('Введите ФИ: ')
+	filde = list(filter(lambda x: name in x[0], list_1))
+	if len(filde):# != 0:
+		for i in filde:
+			print(i)
+			outlog()
+	else:
+		nike = input('ФИ нет в списке контактов. Добавить?\n1-да\n2-нет\n: ')
+		if nike == '1':
+			add_name() # запуск функции "Добавить новый контакт"
+		if nike == '2':
+			outlog() # возврат на страницу "Входа"
+		else:
+			print('Введена не верная команда')
+			outlog()
+# find_name()
 
-def write_txt(filename, phone_book): # функция имеет два значения (имя файла и данные)
-
-    with open(filename, 'w', encoding = 'utf-8') as phout:  # filename, на семинаре, обозначен, как
-                                                            # 'phonebook.txt', но в коде переменная
-                                                            # filename нигде не принимает строку
-                                                            # в виде: filename = 'phonebook.txt'
-                                                            # 'w' - перезапись
-                                                            # 'w+' - перезапись, чтение 
-                                                            # и создание нового файла
-        for i in range(len(phone_book)):
-            s = ''
-            for v in phone_book[i].values(): # 'v' - значение, которое ищем в наших словарях
-                                             # Код не понимает, что значит 'values',
-                                             # не подсвечивает переменную
-                s += v + ','
-            phout.write(f'{s[:-1]}\n')  # phout.write - построчная запись
-                                        # s[] - срез строки, найденой при переборе
-                                        # s[:-1] - строка без запятой (последний элемент)
-                                        # '\n' - переход на другую строку
 
 
-work_with_phonebook()
+'''
+Удаление данных
+'''
+def delete():
+	list_1 = reade()
+	name = input('Введите ФИ: ')
+	len_list_1 = len(list_1)
+	rem = []
+	for i in list_1:
+		if name in i[0]:
+			rem.append(i)
+	if len(rem) != 0: print(*rem, sep ='\n')		
+	if len(rem) == 1:
+		list_1.remove(rem[0])
+		create(list_1)
+		outlog()
+	elif len(rem) > 1:
+		num = input('Введите номер телефона: ')
+		for j in rem:
+			if num == j[1]:
+				list_1.remove(j)
+				create(list_1)
+				outlog()
+		if len_list_1 == len(list_1):
+			print('Нет номера') # Номер удалён?
+			outlog()
+	else: 
+		print('Контакта нет') # Контакт удалён?
+		outlog()
+		
+
+
+'''
+Редактирование
+'''
+def redact(): 
+	list_1 = reade()
+	red = input('Кого редактировать?\n: ')
+	find = list(filter(lambda x: red in x[0], list_1))
+	if len(find) != 0:
+		for i in find: 
+			print(i)
+	else: 
+		print('ФИ нет в контактах')
+		outlog()
+	if len(find) == 1:
+		for i in find: 
+			uno = input('Изменить ФИ-1, телефон-2\n: ')
+			if uno == '1':
+				list_1[list_1.index(i)][0] = input('ФИ: ') 	# Разделить имя и фамилию (?)
+			elif uno == '2':
+				list_1[list_1.index(j)][1] = input('Телефон: ')
+			else: 
+				print('Введена неверная команда')
+				redact()
+# 00:30:29				
+	bum = 0
+	if len(find) > 1: 
+		num = input('Введите номер телефона: ') 
+		for j in find: 	
+			# print(num, j[1])
+			if num == j[1]:
+				uno = input('Изменить: ФИ - 1, телефон - 2 ')
+				if uno == '1':
+					list_1[list_1.index(j)][0] = input('ФИ: ')
+				elif uno == '2':
+					list_1[list_1.index(j)][1] = input('Телефон: ')
+				else:
+					print('Введена неверная команда')
+					redact()
+			else: bum += 1
+		if len(find) == bum: 
+			print('Такого номера нет')
+	create(list_1)
+	outlog()	
+
+
+
+'''
+Добавить новый контакт
+'''
+def add_name():
+    list_1 = reade()
+    saves = input('Создать контакт?\nда-1\nнет-2\n ')
+    list_2 =[]
+    if saves == '1':
+        name = input('Введите новое ФИ: ')
+        list_2.append(name)
+        num = input('Введите номер телефона: ')
+        list_2.append(num)
+        if len(list(filter(lambda x: list_2 == x, list_1))) > 0:
+            print('Такой номер и ФИ уже есть')
+        else:
+            list_1.append(list_2)
+            create(list_1)
+            print('Контакт добавлен')
+            outlog()
+    elif saves == '2':
+        outlog()
+    else:
+        print('Введена неверная команда')
+        outlog()
+	# print(list_1)
+
+
+'''
+Функция ввода (w), 
+(создание новой записи)
+'''
+def create(list_1):
+	listes = list_1
+	with open('phonebook.txt','w+', encoding='utf-8') as Phone:
+		for i in listes:
+			Phone.write(f'{i[0]},{i[1]}\n') # 'i[0]' - ФИ, 'i[1]' - номер
+		list_1 += listes
+	return list_1 # добавил возврат 'return list_1'
+# create()
+
+
+'''
+Функция чтения (r)
+'''
+def reade(): 
+	spros = []
+	with open('phonebook.txt','r', encoding='utf-8') as Phone:
+		for i in Phone.readlines():
+			spros.append(i.strip().split(',')) 	# split - разбивает на символы (?)
+							   					# strip - обрезает пробелы и '\n',
+							   					# т.е. удаляет лишнюю строку 
+												# в конце списка и пустые строки
+												# не накапливаются при работе кода
+												# lsrtip - обрезка пробелов слева
+												# rsrtip - обрезка пробелов справа		
+	return (spros)
+# spros = reade()
+print(reade())
+
+
+'''
+Функция начала Start
+'''	
+def start(): # В момент запуска, одновременно со списком пунктов, 
+			 # код выдаёт список контактов. Как исправить?
+	
+	# data = show_menu() # Функция меню команд Сердюка,
+                         # с данным кодом не контачит,
+                         # вызов пунктов меню - через "input()"
+
+	data = input("\nВыбрать действие:\n1. Показать список контактов\n"
+				"2. Hайти контакт\n3. Добавить контакт\n"
+				"4. Редактировать контакт\n5. Удалить\n") 
+	if data == '1': 
+		# reade() 	# прямая ссылка на функцию не работает,
+					# список контактов выдаёт, только запись ниже
+		spros = reade()
+		print(*spros, sep ='\n')
+		outlog()
+	elif data == '2': 
+		find_name()
+	elif data == '3': 
+		add_name()
+	elif data == '4': 
+		redact()
+	elif data == '5': 
+		delete()
+
+"""
+Функция "show_menu" (см. ниже) с кодом не конектится
+"""	
+# def show_menu():
+# 	print("\nВыберите наобходимое действие:\n"
+#           "1. Отобразить весь справочник\n"
+#           "2. Найти обонента по фамилии\n"
+#           "3. найти обонента по номеру телефона\n"
+#           "4. Добавить абонента в справочник\n"
+#           "5. Изменить данные\n"
+#           "6. Сохранить справочник в текстовом формате\n"
+#           "7. Закончить работу")
+# 	data = int(input())
+# 	return data
+
+
+start()
+
+
+# 00:33:20
+
