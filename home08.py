@@ -116,7 +116,6 @@ def delete():
 		outlog()
 		
 
-
 '''
 Редактор
 '''
@@ -134,13 +133,12 @@ def redact():
 		for i in find: 
 			uno = input('Изменить ФИ-1, телефон-2\n: ')
 			if uno == '1':
-				list_1[list_1.index(i)][0] = input('ФИ: ') 	# Разделить имя и фамилию (?)
+				list_1[list_1.index(i)][0] = input('ФИ: ') # Разделить имя и фамилию (?)
 			elif uno == '2':
 				list_1[list_1.index(j)][1] = input('Телефон: ')
 			else: 
 				print('Введена неверная команда')
-				redact()
-# 00:30:29				
+				redact() 			
 	bum = 0
 	if len(find) > 1: 
 		num = input('Введите номер телефона: ') 
@@ -198,7 +196,7 @@ def create(list_1):
 	listes = list_1
 	with open('phonebook.txt','w+', encoding='utf-8') as Phone:
 		for i in listes:
-			Phone.write(f'{i[0]},{i[1]}\n') # 'i[0]' - ФИ, 'i[1]' - номер
+			Phone.write(f'{i[0]},{i[1]}\n') # ФИ: 'i[0]', номер: 'i[1]'
 		list_1 += listes
 	return list_1 # добавил возврат 'return list_1'
 # create()
