@@ -34,15 +34,15 @@
 
 
 Вариант 3 
-(Марина Вершинина)
 00:17:50 (файл lesson10.py)
 """
 
 # list_1 = [('Вершинина','Марина','777'),
-# 		  ('Бурков','Евгений','666'),
-# 		  ('tttttt','','22222')]
+# 	('Бурков','Евгений','666'),
+# 	('tttttt','','22222')]
 # for i in list_1:
 # 	print(*i)
+
 
 
 '''
@@ -58,6 +58,7 @@ def outlog():
 	else: 
 		print('Введена не верная команда')
 		outlog()
+
 
 
 '''
@@ -81,6 +82,7 @@ def find_name():
 			print('Введена не верная команда')
 			outlog()
 # find_name()
+
 
 
 '''
@@ -113,6 +115,7 @@ def delete():
 		print('Контакта нет') # Контакт удалён?
 		outlog()
 		
+
 
 '''
 Редактор
@@ -159,6 +162,7 @@ def redact():
 	outlog()	
 
 
+
 '''
 Добавить контакт
 '''
@@ -186,6 +190,7 @@ def add_name():
 	# print(list_1)
 
 
+
 '''
 Создание новой записи
 '''
@@ -197,6 +202,7 @@ def create(list_1):
 		list_1 += listes
 	return list_1 # добавил возврат 'return list_1'
 # create()
+
 
 
 '''
@@ -216,6 +222,7 @@ def reade():
 	return (spros)
 # spros = reade()
 print(reade())
+
 
 
 '''
