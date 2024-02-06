@@ -46,6 +46,7 @@
 """ 
 Решение
 """
+
 num_rows = int(input('Number rows: '))
 num_columns = int(input('Number columns: '))
 
@@ -171,11 +172,11 @@ print(puh())
 
 Решение
 """
-# values = [0, 2, 10, 6] 
-# same_by = list(filter(lambda x: x % 2 == 0, values))
-# print('Original:', values)
-# print('Filtered:', same_by)
+values = [0, 2, 10, 6] 
+same_by = list(filter(lambda x: x % 2 == 0, values))
+print('Original:', values)
+print('Filtered:', same_by)
 
-# if same_by == values: print('same')
-# else: print('different')
+if same_by == values: print('same')
+else: print('different')
 
