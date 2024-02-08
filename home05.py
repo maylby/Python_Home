@@ -13,31 +13,35 @@
 
 Пример:
 """
-# # a = 3; b = 5 -> 243 (3⁵)
-# # a = 2; b = 3 -> 8 
+# a = 3; b = 5 -> 243 (3⁵)
+# a = 2; b = 3 -> 8 
 
+"""
+Решение
 
-# a = int(input('Input base: '))
-# b = int(input('Input exp: '))
+Вариант 1
+"""
+a = int(input('Input base: '))
+b = int(input('Input exp: '))
 
-# def power(a, b):
-#     if b == 0: return 1
-#     return (a * power(a, b - 1))
+def power(a, b):
+    if b == 0: return 1
+    return (a * power(a, b - 1))
 
-# print(f'{a} ** {b} = {power(a, b)}')
+print(f'{a} ** {b} = {power(a, b)}')
 
 
 """
 Вариант 2
 """
-# def power(base, exp):
-#     if (exp == 1): return (base)
-#     if (exp != 1): return (base * power(base, exp - 1))
+def power(base, exp):
+    if (exp == 1): return (base)
+    if (exp != 1): return (base * power(base, exp - 1))
 
-# base = int(input("Число: "))
-# exp = int(input("Степень: "))
+base = int(input("Число: "))
+exp = int(input("Степень: "))
 
-# print(f'{base} в степени {exp} -> {power(base, exp)}')
+print(f'{base} в степени {exp} -> {power(base, exp)}')
 
 
 """
@@ -52,14 +56,17 @@
 
 Пример:
 """
-# # sum(2, 2)
-# # 4
+# sum(2, 2)
+# 4
 
-# a = int(input('Input A: '))
-# b = int(input('Input B: '))
+"""
+Решение
+"""
+a = int(input('Input A: '))
+b = int(input('Input B: '))
 
-# def sum(a, b):
-#     if b == 0 and a > b: return a
-#     return (sum(a, b - 1) + 1)
+def sum(a, b):
+    if b == 0 and a > b: return a
+    return (sum(a, b - 1) + 1)
 
-# print(f'sum: {sum(a, b)}')
+print(f'sum: {sum(a, b)}')
