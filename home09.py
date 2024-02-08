@@ -25,20 +25,22 @@
 Дан файл california_housing_train.csv. Определить среднюю стоимость дома, 
 где количество людей от 0 до 500 (population) и сохранить ее в переменную avg. 
 Используйте модуль pandas.
+ 
+Без библиотек "pandas" в VSCode работать не будет
 
-Решение для автотеста, 
-без библиотек "pandas" в VSCode работать не будет
+Решение для автотеста,
 """
 
 '''
 Запрос по 'head(10)'
 '''
-import pandas as pd
+import pandas as pd # Сообщение VSCode: 
+                    # "не удалось импортировать «pandas»"
 df = pd.read_csv('california_housing_train.csv')
 df.head(10)
 print(df.head(10))
 
-# (?) выдача на сервисе "goole panda":
+# выдача на сервисе "goole panda":
 # 0 -114.31 34.19   15.0    5612.0  1283.0  1015.0 472.0    1.4936  66900.0
 
 
@@ -81,4 +83,7 @@ print(df.shape)
 в зоне минимального значения переменной min_population 
 и сохраните это значение в переменную max_households_in_min_population.
 Используйте модуль pandas
+
+Решение для автотеста, 
+без библиотек "pandas" в VSCode работать не будет
 """
