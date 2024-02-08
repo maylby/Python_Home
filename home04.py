@@ -11,54 +11,58 @@ n - кол-во элементов первого множества.
 m - кол-во элементов второго множества. 
 Затем пользователь вводит сами элементы множеств.
 """
-# # 11 6
-# # 2 4 6 8 10 12 10 8 6 4 2
-# # 3 6 9 12 15 18
-# # 6 12
+# 11 6
+# 2 4 6 8 10 12 10 8 6 4 2
+# 3 6 9 12 15 18
+# 6 12
 
-# list_n = '2 4 6 8 10 12 10 8 6 4 2'
-# list_m = '3 6 9 12 15 18 2'
+''' Решение
 
-# n = print(len(list_n.split()), end = " ")
-# m = print(len(list_m.split()))
-# print(list_n)
-# print(list_m)
+Вариант 1
+'''
+list_n = '2 4 6 8 10 12 10 8 6 4 2'
+list_m = '3 6 9 12 15 18 2'
 
-# set_n = set(list_n.split())
-# set_m = set(list_m.split())
-# # print(set_n) # проверочный вывод на экран
-# # print(set_m) # проверочный вывод на экран
+n = print(len(list_n.split()), end = " ")
+m = print(len(list_m.split()))
+print(list_n)
+print(list_m)
 
-# if set_n != set_m: # print(*sorted(set_n & set_m)) # запись в одну строку
-#     result = sorted(set_n.intersection(set_m))  # 'intersection' - поиск 
-#                                                 # пересечения множеств
-#     result = sorted(set_n & set_m)  # '&' - амперсент, другой способ 
-#                                     # поиска пересечения множеств
-#     print(*result)  # (???) Не выводит значения в порядке возрастания!
-#                     # Вывод: '12 2 6' <- неупорядоченный результат
+set_n = set(list_n.split())
+set_m = set(list_m.split())
+# print(set_n) # проверочный вывод на экран
+# print(set_m) # проверочный вывод на экран
+
+if set_n != set_m: # print(*sorted(set_n & set_m)) # запись в одну строку
+    result = sorted(set_n.intersection(set_m))  # 'intersection' - поиск 
+                                                # пересечения множеств
+    result = sorted(set_n & set_m)  # '&' - амперсент, другой способ 
+                                    # поиска пересечения множеств
+    print(*result)  # (???) Не выводит значения в порядке возрастания!
+                    # Вывод: '12 2 6' <- неупорядоченный результат
 
 
 """
 Вариант 2 (Задача 1(22))
-(Генадий Ионов, из разбора ДЗ-04 на 01_(С-05), 00:35:55) 
+(Генадий Ионов, разбор ДЗ-04 на 01_(С-05), 00:35:55) 
 """
 
-# print()
-# var1 = '5 4' # количество элементов двух списков (var2 и var3)
-#              # количество элементов вводится вручную заранее,
-#              # в "Варианте 1" решения, число элементов вычислялось 
-#              # автоматически по заданным спискам (var2 и var3),
-#              # автоматизация позволяет избежать ошибок при вводе данных
-# print(var1)
+print()
+var1 = '5 4' # количество элементов двух списков (var2 и var3)
+             # количество элементов вводится вручную заранее,
+             # в "Варианте 1" решения, число элементов вычислялось 
+             # автоматически по заданным спискам (var2 и var3),
+             # автоматизация позволяет избежать ошибок при вводе данных
+print(var1)
 
-# var2 = '1 3 5 7 9'
-# var3 = '2 3 4 5'
-# print(f'{var2}\n{var3}')
+var2 = '1 3 5 7 9'
+var3 = '2 3 4 5'
+print(f'{var2}\n{var3}')
 
-# a = set(var2.split())
-# b = set(var3.split())
-# i = a.intersection(b)
-# print(*sorted(i))
+a = set(var2.split())
+b = set(var3.split())
+i = a.intersection(b)
+print(*sorted(i))
 
 
 
@@ -81,45 +85,48 @@ m - кол-во элементов второго множества.
 которое может собрать за один заход собирающий модуль, 
 находясь перед некоторым кустом заданной во входном файле грядки.
 """
-# # 4 -> 1 2 3 4
-# # 9
+# 4 -> 1 2 3 4
+# 9
 
-# n = int(input('Input quantity numbers: '))
-# arr = []
+''' Решение
 
-# from random import randint 
-# for i in range(n):
-#     arr.append(randint(1, 10)) 
-# print(f'{n} -> {arr}')
+Вариант 1
+'''
+n = int(input('Input quantity numbers: '))
+arr = []
 
-# count = list()
-# for i in range(len(arr)):
-#     count.append(arr[i-2] + arr[i-1] + arr[i])
-# print('max =', max(count))
+from random import randint 
+for i in range(n):
+    arr.append(randint(1, 10)) 
+print(f'{n} -> {arr}')
+
+count = list()
+for i in range(len(arr)):
+    count.append(arr[i-2] + arr[i-1] + arr[i])
+print('max =', max(count))
 
 
-# 00:34:00
 ''' 
 Вариант 2 (цикл 'while')
-(Генадий Ионов)
+(Генадий Ионов, разбор ДЗ-04 на 01_(С-05), 00:34:00)
 '''
-# n = int(input('Input quantity numbers: '))
-# arr = [] 
+n = int(input('Input quantity numbers: '))
+arr = [] 
 
-# from random import randint # вставил рандомный ввод
-# for i in range(n):
-#     arr.append(randint(1, 10)) 
-# print(f'{n} -> {arr}')
+from random import randint # вставил рандомный ввод
+for i in range(n):
+    arr.append(randint(1, 10)) 
+print(f'{n} -> {arr}')
 
-# temp = 0
-# count = 0
-# maxNum = 0
+temp = 0
+count = 0
+maxNum = 0
 
-# while count < len(arr):
-#     temp = arr.pop(-1)  # <- объединил в одну строку 
-#                         # temp = arr[-1] и arr.pop(-1)
-#     arr.insert(0, temp)
-#     count += 1
-#     a = arr[i-2] + arr[i-1] + arr[i] # заменил цифры (1,2,3) на индекс (i)
-#     if a > maxNum: maxNum = a
-# print(maxNum)
+while count < len(arr):
+    temp = arr.pop(-1)  # <- объединил в одну строку 
+                        # temp = arr[-1] и arr.pop(-1)
+    arr.insert(0, temp)
+    count += 1
+    a = arr[i-2] + arr[i-1] + arr[i] # заменил цифры (1,2,3) на индекс (i)
+    if a > maxNum: maxNum = a
+print(maxNum)
