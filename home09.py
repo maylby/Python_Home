@@ -39,49 +39,6 @@ avg = df[(df['population'] >= 0) & (df['population'] <= 500)] ['median_house_val
 print(avg) 
 
 
-'''
-Запрос по 'head(10)'
-'''
-import pandas as pd # Сообщение VSCode: 
-                    # "не удалось импортировать «pandas»"
-df = pd.read_csv('california_housing_train.csv')
-df.head(10)
-print(df.head(10))
-
-# выдача на сервисе "goole panda":
-# 0 -114.31 34.19   15.0    5612.0  1283.0  1015.0 472.0    1.4936  66900.0
-
-
-''' 
-запрос по 'tail' 
-'''
-import pandas as pd
-df = pd.read_csv('california_housing_train.csv')
-df.tail()
-print(df.tail())
-
-
-''' 
-запрос по 'dtypes' 
-'''
-import pandas as pd
-df = pd.read_csv('california_housing_train.csv')
-df.tail()
-print(df.dtypes)
-
-
-''' 
-запрос по 'shape' 
-'''
-import pandas as pd
-df = pd.read_csv('california_housing_train.csv')
-df.tail()
-print(df.shape)
-
-# Вывод автотеста:
-# (30, 9)
-
-
 
 """
 Задача 2
@@ -98,4 +55,59 @@ print(df.shape)
 
 Решение для автотеста, 
 без библиотек "pandas" в VSCode работать не будет
+
+
+Решение (Александр Верзун, 01_(С-10))
 """
+
+import pandas as pd # Сообщение VSCode: "не удалось импортировать «pandas»"
+df = pd.read_csv('california_housing_train.csv')
+# x = 30
+min_population = df['population'].min()
+
+max_households_in_min_population = df[df['population'] <= min_population] ['households'].max()
+print(max_households_in_min_population)
+
+
+
+'''
+Запрос 'head(10)'
+'''
+import pandas as pd # Сообщение VSCode: 
+                    # "не удалось импортировать «pandas»"
+df = pd.read_csv('california_housing_train.csv')
+df.head(10)
+print(df.head(10))
+
+# выдача на сервисе "goole panda":
+# 0 -114.31 34.19   15.0    5612.0  1283.0  1015.0 472.0    1.4936  66900.0
+
+
+''' 
+запрос 'tail' 
+'''
+import pandas as pd
+df = pd.read_csv('california_housing_train.csv')
+df.tail()
+print(df.tail())
+
+
+''' 
+запрос 'dtypes' 
+'''
+import pandas as pd
+df = pd.read_csv('california_housing_train.csv')
+df.tail()
+print(df.dtypes)
+
+
+''' 
+запрос 'shape' 
+'''
+import pandas as pd
+df = pd.read_csv('california_housing_train.csv')
+df.tail()
+print(df.shape)
+
+# Вывод автотеста по 'shape':
+# (30, 9)
