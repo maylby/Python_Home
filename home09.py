@@ -70,6 +70,10 @@ df = pd.read_csv('california_housing_train.csv')
 df.tail()
 print(df.shape)
 
+# Вывод автотеста:
+# (30, 9)
+
+
 
 """
 Задача 2
