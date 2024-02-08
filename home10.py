@@ -28,13 +28,11 @@ import random
 lst = (['robot'] + ['human']) * 5
 random.shuffle(lst)
 # print(*lst) 
-
 a, b = 1, 2
 for i in lst:
     if i == 'robot': lst = a
     else: lst = b
     # print(lst, end = " ") 
-
     res1, res2 = [], []
     for i in range(lst):
         if i % 2 != 0: res1, res2 = 1, 0
