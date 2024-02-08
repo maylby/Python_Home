@@ -39,6 +39,6 @@ for i in lst:
         if i % 2 != 0: res1, res2 = 1, 0
         else: res1, res2 = 0, 1
 
-        print(f'robot {res1}', f'human {res2}')
+        print(f'robot {res1} human {res2}')
 
 
