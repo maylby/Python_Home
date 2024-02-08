@@ -17,3 +17,23 @@
 # data = pd.DataFrame({'whoAmI':lst})
 # data.head()
 
+
+'''
+Решение
+'''
+import random
+
+lst = (['robot'] + ['human']) * 5
+random.shuffle(lst)
+# print(*lst) 
+a, b = 1, 2
+for i in lst:
+    if i == 'robot': lst = a
+    else: lst = b
+    # print(lst, end = " ") 
+    res1, res2 = [], []
+    for i in range(lst):
+        if i % 2 != 0: res1, res2 = 1, 0
+        else: res1, res2 = 0, 1
+
+        print(f'robot {res1} human {res2}')
