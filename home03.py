@@ -25,27 +25,27 @@
 (решение с применением метода 'count')
 '''
 
-# list_1 = [1, 2, 3, 4, 5, 3]
-# k = 3
+list_1 = [1, 2, 3, 4, 5, 3]
+k = 3
 
-# print('list_1 =', list_1)
-# print('k =', k)
-# print(list_1.count(k)) # метод 'count', встроен в функционал Pyhton 
+print('list_1 =', list_1)
+print('k =', k)
+print(list_1.count(k)) # метод 'count', встроен в функционал Pyhton 
 
 
 '''
 Вариант 2 (алгоритмическое решение)
 '''
 
-# list_1 = [1, 2, 3, 4, 5]
-# k = 3
-# print('list_1 =', list_1)
-# print('k =', k)
+list_1 = [1, 2, 3, 4, 5]
+k = 3
+print('list_1 =', list_1)
+print('k =', k)
 
-# count = 0
-# for i in list_1:
-# 	if i == k: count += 1
-# print(count)
+count = 0
+for i in list_1:
+	if i == k: count += 1
+print(count)
 
 
 
@@ -70,32 +70,32 @@
 (С-04; 00:17:40 - Андрей Лопатько)
 '''
 
-# n = int(input('Input quantity number: '))
-# list_1 = [] # для сохранения созданного списка (массива)
-# from random import randint # без "импорта" 'randint' функция не работает 
-# for i in range(n):
-#     list_1.append(randint(-10, 10)) # Если в промежутке (-10, 10) 
-#                                     # заменить '-10' на другое число, то результат поиска 
-#                                     # ближайшего числа к заданному числу 'k' 
-#                                     # выдаёт ошибочные значения
-# print(f'list_1 = {list_1}')
+n = int(input('Input quantity number: '))
+list_1 = [] # для сохранения созданного списка (массива)
+from random import randint # без "импорта" 'randint' функция не работает 
+for i in range(n):
+    list_1.append(randint(-10, 10)) # Если в промежутке (-10, 10) 
+                                    # заменить '-10' на другое число, то результат поиска 
+                                    # ближайшего числа к заданному числу 'k' 
+                                    # выдаёт ошибочные значения
+print(f'list_1 = {list_1}')
 
-# k = int(input('k = '))
+k = int(input('k = '))
 
-# min1 = abs(k - list_1[0]) # Функция 'abs()' возвращает абсолютное значение заданного числа: 
-#                           # - Целые числа — целочисленное абсолютное значение; 
-#                           # - Числа с плавающей точкой — абсолютное значение с плавающей точкой; 
-#                           # - Комплексные числа — величина числа.
-# result = list_1[0]
-# for i in range(1, len(list_1)):
-#     if (k - list_1[i]) < min1: 
-#         min1 = abs(k - list_1[i])
-#         result = list_1[i]
-# print(result) # Как вернуть два числа, если минимумы совпадают? 
-#               # Пример:
-#               # list_1 = [10, 9, 2, -10, 4]
-#               # k = 3
-#               # 4 <- выдача || реальный результат -> 2 и 4
+min1 = abs(k - list_1[0]) # Функция 'abs()' возвращает абсолютное значение заданного числа: 
+                          # - Целые числа — целочисленное абсолютное значение; 
+                          # - Числа с плавающей точкой — абсолютное значение с плавающей точкой; 
+                          # - Комплексные числа — величина числа.
+result = list_1[0]
+for i in range(1, len(list_1)):
+    if (k - list_1[i]) < min1: 
+        min1 = abs(k - list_1[i])
+        result = list_1[i]
+print(result) # Как вернуть два числа, если минимумы совпадают? 
+              # Пример:
+              # list_1 = [10, 9, 2, -10, 4]
+              # k = 3
+              # 4 <- выдача || реальный результат -> 2 и 4
 
 
 """
@@ -106,18 +106,18 @@
 https://uchet-jkh.ru/i/napisite-programmu-dlya-poiska-elementa-v-massive-blizaisego-po-velicine-k-zadannomu-cislu/ 
 """
 
-# numbers = [2, 5, 9, 12, 17]
-# print(f'numbers = {numbers}')
-# target = int(input('target = '))
-# closest = None
-# closest_diff = None
+numbers = [2, 5, 9, 12, 17]
+print(f'numbers = {numbers}')
+target = int(input('target = '))
+closest = None
+closest_diff = None
 
-# for number in numbers:
-# 	diff = abs(number - target)
-# 	if closest_diff is None or diff < closest_diff:
-# 		closest = number
-# 		closest_diff = diff
-# print(closest)
+for number in numbers:
+	diff = abs(number - target)
+	if closest_diff is None or diff < closest_diff:
+		closest = number
+		closest_diff = diff
+print(closest)
 
 
 """
@@ -127,14 +127,14 @@ https://uchet-jkh.ru/i/napisite-programmu-dlya-poiska-elementa-v-massive-blizais
 """
 # https://ru.stackoverflow.com/questions/773869/
 
-# l = [5, 78, 45, 12, 56, 99]
-# print('list =', l)
-# k = int(input('k = '))
+l = [5, 78, 45, 12, 56, 99]
+print('list =', l)
+k = int(input('k = '))
 
-# def nearest(lst, target):
-#   return min(lst, key = lambda x: abs(x-target))
+def nearest(lst, target):
+  return min(lst, key = lambda x: abs(x-target))
 
-# print(nearest(l, k))
+print(nearest(l, k))
 
 
 
@@ -182,98 +182,98 @@ https://uchet-jkh.ru/i/napisite-programmu-dlya-poiska-elementa-v-massive-blizais
 # k = 'ноутбук'
 # 12
 
+
 """
 Решение:
 
 Вариант 1 (???)
 """
+l_En1 = {'AEIOULNSTR' : 1}
 
-# l_En1 = {'AEIOULNSTR' : 1}
+print(l_En1)
 
-# print(l_En1)
+word = ('lines')
+w = word.upper()
+result = 0
 
-# word = ('lines')
-# w = word.upper()
-# result = 0
-
-# for i in w: 
-#     for j in l_En1:  
-#         if i in j:
-#             result += w[i]
-# print(result) # выведение 'i' при каждой итерации цикла
+for i in w: 
+    for j in l_En1:  
+        if i in j:
+            result += w[i]
+print(result) # выведение 'i' при каждой итерации цикла
 
 
 """ 
-Вариант 2 
+Вариант 2.1 
 """
-# w = input('Input word: ')
-# # word = 'ноутбук' # проверить правильность написания
-# word = w.upper() # Метод upper() возращает копию строки, 
-#                  # в которой все буквы сконвертированы 
-#                  # к большому регистру (заглавные буквы)
-# dict_rus = {'АВЕИНОРСТ' : 1,
-# 	        'ДКЛМПУ' : 2,
-# 	        'БГЁЬЯ' : 3,
-# 	        'ЙЫ' : 4,
-# 	        'ЖЗХЦЧ' : 5,
-# 	        'ШЭЮ' : 8,
-# 	        'ФЩЪ' : 10}
-# dict_en = {'AEIOULNSTR' : 1,
-# 		   'DG' : 2,
-# 		   'BCMP' : 3,
-# 		   'FHVWY' : 4,
-# 		   'K' : 5,
-# 		   'JX' : 8,
-# 		   'QZ' : 10}
-# result = 0
-# for i in word:
-# 	for simbols, count in dict_rus.items() | dict_en.items(): 
-# 		                            # items() - это метод словарей в Python, 
-# 	                                # возвращает итерируемый объект (DictView) 
-# 		                            # для получения пары "ключ-значение" словаря.
-# 		if i in simbols: result += count
-# print(result)
+w = input('Input word: ')
+# word = 'ноутбук' # проверить правильность написания
+word = w.upper() # Метод upper() возращает копию строки, 
+                 # в которой все буквы сконвертированы 
+                 # к большому регистру (заглавные буквы)
+dict_rus = {'АВЕИНОРСТ' : 1,
+	        'ДКЛМПУ' : 2,
+	        'БГЁЬЯ' : 3,
+	        'ЙЫ' : 4,
+	        'ЖЗХЦЧ' : 5,
+	        'ШЭЮ' : 8,
+	        'ФЩЪ' : 10}
+dict_en = {'AEIOULNSTR' : 1,
+		   'DG' : 2,
+		   'BCMP' : 3,
+		   'FHVWY' : 4,
+		   'K' : 5,
+		   'JX' : 8,
+		   'QZ' : 10}
+result = 0
+for i in word:
+	for simbols, count in dict_rus.items() | dict_en.items(): 
+		                            # items() - это метод словарей в Python, 
+	                                # возвращает итерируемый объект (DictView) 
+		                            # для получения пары "ключ-значение" словаря.
+		if i in simbols: result += count
+print(result)
 
 
 """
-Вариант 2 
+Вариант 2.2 
 (С-04, 00:24:00, Эллона Комарын...)
 """
-# # dict_all = {'А':1,'В':1,'Е':1,'И':1,'Н':1,}
-# dict_all = {'АВЕИНОРСТ' : 1, # сохранил передачу всех букв (rus, en) одной переменной, 
-# 	        'ДКЛМПУ' : 2, # это не позволяет, при необходимости, посчитать отдельно      
-# 	        'БГЁЬЯ' : 3,  # 'count' русских и английских слов
-# 	        'ЙЫ' : 4,     # изменил присвоение значений каждой букве в отдельности,
-#             'ЖЗХЦЧ' : 5,  # объединив в каждом языке (?) буквы с одинаковым значением
-#             'ШЭЮ' : 8,
-#             'ФЩЪ' : 10,
-#             'AEIOULNSTR' : 1,
-#             'DG' : 2,
-#             'BCMP' : 3,
-#             'FHVWY' : 4,
-#             'K' : 5,
-#             'JX' : 8,
-#             'QZ' : 10}
-# word = str.upper(input('Введите слово: ')) # '\n'- перенос слова на новую строку
-# 					    # 'str' (строка) - лишняя запись, т.к.
-# 					    # 'input' - это строка, по определению 
-# word = input('Введите слово:\n').upper() # рекомендованная форма записи,
-# 					                      # аналог 'w.upper()', где 
-# 					                      # w = input('Введите слово: ')
-# print(dict_all.get(word, 'no values')) # выводит 'no values', когда во введённом слове 
-# 				    	                 # есть отсутствующие в словарях символы
-# 				    	                 # код нужен в случае использования v1:
-# # v1:
-# count = 0
-# for i in word: 
-# 	count += dict_all[i] 	
-# print(count) # код работает, когда каждая буква является отдельным словарём,
-#              # т.е. ключём с присвоенным значением: {'А':1,'В':1,'Е':1}
+# dict_all = {'А':1,'В':1,'Е':1,'И':1,'Н':1,}
+dict_all = {'АВЕИНОРСТ' : 1, # сохранил передачу всех букв (rus, en) одной переменной, 
+	        'ДКЛМПУ' : 2, # это не позволяет, при необходимости, посчитать отдельно      
+	        'БГЁЬЯ' : 3,  # 'count' русских и английских слов
+	        'ЙЫ' : 4,     # изменил присвоение значений каждой букве в отдельности,
+            'ЖЗХЦЧ' : 5,  # объединив в каждом языке (?) буквы с одинаковым значением
+            'ШЭЮ' : 8,
+            'ФЩЪ' : 10,
+            'AEIOULNSTR' : 1,
+            'DG' : 2,
+            'BCMP' : 3,
+            'FHVWY' : 4,
+            'K' : 5,
+            'JX' : 8,
+            'QZ' : 10}
+word = str.upper(input('Введите слово: ')) # '\n'- перенос слова на новую строку
+					    # 'str' (строка) - лишняя запись, т.к.
+					    # 'input' - это строка, по определению 
+word = input('Введите слово:\n').upper() # рекомендованная форма записи,
+					                      # аналог 'w.upper()', где 
+					                      # w = input('Введите слово: ')
+print(dict_all.get(word, 'no values')) # выводит 'no values', когда во введённом слове 
+				    	                 # есть отсутствующие в словарях символы
+				    	                 # код нужен в случае использования v1:
+# v1:
+count = 0
+for i in word: 
+	count += dict_all[i] 	
+print(count) # код работает, когда каждая буква является отдельным словарём,
+             # т.е. ключём с присвоенным значением: {'А':1,'В':1,'Е':1}
 
 # v2:
-# for i in word: # проверка имеющихся в слове символов
-# 	for j in dict_all: # поиск их значений в словарях (dict1)
-# 		if i in j: # условие присвоения значения буквам слова -
-# 			       # соответствие буквам словарей
-# 			count += dict_all[j] # сложение найденных значений
-# print(count)
+for i in word: # проверка имеющихся в слове символов
+	for j in dict_all: # поиск их значений в словарях (dict1)
+		if i in j: # условие присвоения значения буквам слова -
+			       # соответствие буквам словарей
+			count += dict_all[j] # сложение найденных значений
+print(count)
