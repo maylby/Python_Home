@@ -26,7 +26,50 @@
 где количество людей от 0 до 500 (population) и сохранить ее в переменную avg. 
 Используйте модуль pandas.
 
+Решение для автотеста, 
+без библиотек "pandas" в VSCode работать не будет
+"""
 
+'''
+Запрос по 'head(10)'
+'''
+import pandas as pd
+df = pd.read_csv('california_housing_train.csv')
+df.head(10)
+print(df.head(10))
+
+# (?) выдача на сервисе "goole panda":
+# 0 -114.31 34.19   15.0    5612.0  1283.0  1015.0 472.0    1.4936  66900.0
+
+
+''' 
+запрос по 'tail' 
+'''
+import pandas as pd
+df = pd.read_csv('california_housing_train.csv')
+df.tail()
+print(df.tail())
+
+
+''' 
+запрос по 'dtypes' 
+'''
+import pandas as pd
+df = pd.read_csv('california_housing_train.csv')
+df.tail()
+print(df.dtypes)
+
+
+''' 
+запрос по 'shape' 
+'''
+import pandas as pd
+df = pd.read_csv('california_housing_train.csv')
+df.tail()
+print(df.shape)
+
+
+"""
 Задача 2
 """
 # https://autotest.gb.ru/problems/114?lesson_id=391160&_ga=2.4481907.1926430629.1706850067-1736153193.1704617193
