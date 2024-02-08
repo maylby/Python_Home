@@ -34,6 +34,7 @@
 # 19
 
 
+
 """
 Задача 2 (28)
 Арифметическая прогрессия
@@ -55,3 +56,28 @@
 # 5
 # 8
 # 11
+
+"""
+Решение
+
+Вариант 1
+(Александр Верзун, 01_(С-07) разбор ДЗ-06, 01:13:30)
+"""
+
+num = int(input('Input number: ')) 
+step = int(input('Input step: '))
+count = int(input('Input count: '))
+
+my_list = [num]
+for i in range(step, count + 1): 
+	my_list.append(num + (i - 1) * step)
+
+print(num, step, count)
+print(*my_list)
+
+
+'''
+Вариант 2 (генератор списков)
+'''
+my_list = [num + i * step for i in range(count)]
+print(my_list)
