@@ -13,20 +13,20 @@
 ''' Задача 2: 
 Найдите сумму цифр трехзначного числа.'''
 
-# # Использовать цикл чередований x % 10 и x//10
-# # остаток от деления берёт последнюю цифру
-# # целочисленное деление отрезает последнюю цифру
+# Использовать цикл чередований x % 10 и x//10
+# остаток от деления берёт последнюю цифру
+# целочисленное деление отрезает последнюю цифру
 
-# # 123 -> 6 (1 + 2 + 3)
-# # 100 -> 1 (1 + 0 + 0)
+# 123 -> 6 (1 + 2 + 3)
+# 100 -> 1 (1 + 0 + 0)
 
-# num = int(input('Input number: ', ))
-# n = int(num)
-# summa = 0
-# while n > 0:
-#     summa += n % 10 
-#     n //= 10
-# print(f'{num} -> {summa}')
+num = int(input('Input number: ', ))
+n = int(num)
+summa = 0
+while n > 0:
+    summa += n % 10 
+    n //= 10
+print(f'{num} -> {summa}')
 
 
 ''' Задача 4: 
@@ -37,26 +37,26 @@
 а Катя сделала в два раза больше журавликов,
 чем Петя и Сережа вместе?'''
 
-# # Использование кратности
-# # Трое детей, сделали 1, 1 и 4 журавлика за одно и тоже время
-# # Общее кратное суммы - 6 (шесть)
-# # Петя -> x, Сережа -> x, Катя -> x*4
-# # summa = x + x + x*4 = x*6
-# # x = summa // 6
+# Использование кратности
+# Трое детей, сделали 1, 1 и 4 журавлика за одно и тоже время
+# Общее кратное суммы - 6 (шесть)
+# Петя -> x, Сережа -> x, Катя -> x*4
+# summa = x + x + x*4 = x*6
+# x = summa // 6
 
-# # 6 -> 1 4 1
-# # 24 -> 4 16 4
-# # 60 -> 10 40 10
+# 6 -> 1 4 1
+# 24 -> 4 16 4
+# 60 -> 10 40 10
 
-# n = int(input('Input number: ', ))
-# sum = int(n)
-# if sum % 6 != 0: 
-#     print('No solution')
-# else:
-#     n1 = sum // 6
-#     n2 = n1 * 4
-#     n3 = n1
-#     print(n, '->', n1, n2, n3)
+n = int(input('Input number: ', ))
+sum = int(n)
+if sum % 6 != 0: 
+    print('No solution')
+else:
+    n1 = sum // 6
+    n2 = n1 * 4
+    n3 = n1
+    print(n, '->', n1, n2, n3)
 
 
 
@@ -74,32 +74,32 @@
 
 ''' Решение "строкой" '''
 
-# num = int(input('Input number: ', ))
-# x = str(num)
-# s1 = int(x[0]) + int(x[1]) + int(x[2]) # x[i] -> прямой порядок вызова, слева направо
-# s2 = int(x[-1]) + int(x[-2]) + int(x[-3]) # x[-i] -> обратный порядок, с конца к началу
-# print(num, '->', s1 == s2)
+num = int(input('Input number: ', ))
+x = str(num)
+s1 = int(x[0]) + int(x[1]) + int(x[2]) # x[i] -> прямой порядок вызова, слева направо
+s2 = int(x[-1]) + int(x[-2]) + int(x[-3]) # x[-i] -> обратный порядок, с конца к началу
+print(num, '->', s1 == s2)
 
 
-# ''' Решение "циклом" '''
+''' Решение "циклом" '''
 
-# n = int(input('Input number: ', ))
-# number = int(n)
-# num1 = number // 1000
-# num2 = number % 1000
-# sum1 = 0
-# sum2 = 0
+n = int(input('Input number: ', ))
+number = int(n)
+num1 = number // 1000
+num2 = number % 1000
+sum1 = 0
+sum2 = 0
 
-# while num1 > 0:
-#     sum1 += num1 % 10
-#     num1 //= 10
-#     sum2 += num2 % 10
-#     num2 //= 10
-# if sum1 != sum2: 
-#     print('n =', n, '-> no')
-# else: 
-#     sum1 == sum2 
-#     print('n =', n, '-> yes')
+while num1 > 0:
+    sum1 += num1 % 10
+    num1 //= 10
+    sum2 += num2 % 10
+    num2 //= 10
+if sum1 != sum2: 
+    print('n =', n, '-> no')
+else: 
+    sum1 == sum2 
+    print('n =', n, '-> yes')
 
 
 
@@ -109,21 +109,21 @@
 сделать один разлом по прямой между дольками 
 (то есть разломить шоколадку на два прямоугольника).'''
 
-# # должно выпоняться условие:
-# # один разлом можно записать, как кратность одной из сторон
-# # k % n == 0 or k % m == 0
-# # k != n and k != m and k < m * n
-# # при выполнении - yes
-# # иначе - no
+# должно выпоняться условие:
+# один разлом можно записать, как кратность одной из сторон
+# k % n == 0 or k % m == 0
+# k != n and k != m and k < m * n
+# при выполнении - yes
+# иначе - no
 
-# # 3 2 4 -> yes
-# # 3 2 1 -> no
+# 3 2 4 -> yes
+# 3 2 1 -> no
 
-# a = int(input('Input number A: ', ))
-# b = int(input('Input number B: ', ))
-# c = int(input('Input number C: ', ))
+a = int(input('Input number A: ', ))
+b = int(input('Input number B: ', ))
+c = int(input('Input number C: ', ))
 
-# if c % a == 0 or c % b == 0:
-#     if c != a and c != b and c < b * a:
-#         print('a, b, c =', f'{a}, {b}, {c} -> yes')
-# else: print('a, b, c =', f'{a}, {b}, {c} -> no')
+if c % a == 0 or c % b == 0:
+    if c != a and c != b and c < b * a:
+        print('a, b, c =', f'{a}, {b}, {c} -> yes')
+else: print('a, b, c =', f'{a}, {b}, {c} -> no')

@@ -29,85 +29,85 @@
 
 ''' Варианты 1 (for) '''
 
-# coins = [0, 1, 0, 1, 1, 0] # [] # вводимый список
-# # coins = list() 
-# # coins = list(input()) # проверить правильность формы записи
-# # coins = list('input coins = ', ) # можно ли так записать?
-# print(f'coins = {coins}') # вывод на экран введённых данных
+coins = [0, 1, 0, 1, 1, 0] # [] # вводимый список
+# coins = list() 
+# coins = list(input()) # проверить правильность формы записи
+# coins = list('input coins = ', ) # можно ли так записать?
+print(f'coins = {coins}') # вывод на экран введённых данных
 
-# n0 = 0
-# n1 = 0
+n0 = 0
+n1 = 0
 
-# for i in coins:
-# 	if coins[i] == 0: n0 += 1
-# 	else: n1 += 1
-# if n0 < n1: print(n0)
-# else: print(n1)
+for i in coins:
+	if coins[i] == 0: n0 += 1
+	else: n1 += 1
+if n0 < n1: print(n0)
+else: print(n1)
 
 
 ''' Варианты 2 (while) '''
 # код не работает, на выходе выдаёт 0, разобраться
 
-# coins = [0, 1, 0, 1, 1, 0]
-# print(list(coins))
-# # coins = list() 
-# n = len(coins) 
-# a = 0
-# b = 0
+coins = [0, 1, 0, 1, 1, 0]
+print(list(coins))
+# coins = list() 
+n = len(coins) 
+a = 0
+b = 0
 
-# while n > 0:
-# 	if coins == 0: a += 1
-# 	if coins == 1: b += 1
-# 	n -= 1 
-# if a < b: print(a)
-# else: print(b)
+while n > 0:
+	if coins == 0: a += 1
+	if coins == 1: b += 1
+	n -= 1 
+if a < b: print(a)
+else: print(b)
 
 
 ''' Вариант 3.1 '''
-# # 01_(C-03) 00:14:30
-# # Решение с семинарского занятия (Алёна Хахина)
+# 01_(C-03) 00:14:30
+# Решение с семинарского занятия (Алёна Хахина)
 
-# coins = [0, 1, 0, 1, 1, 0]
-# print(f'coins = {coins}')
-# # coins = []
-# print(coins.count(0) if coins.count(0) < coins.count(1) else coins.count(1))
+coins = [0, 1, 0, 1, 1, 0]
+print(f'coins = {coins}')
+# coins = []
+print(coins.count(0) if coins.count(0) < coins.count(1) else coins.count(1))
 
 
 ''' Вариант 3.2 '''
-# # Изменен мной
+# Изменен мной
 
-# coins = [0, 1, 0, 1, 1, 0]
-# print(f'coins = {coins}')
+coins = [0, 1, 0, 1, 1, 0]
+print(f'coins = {coins}')
 
-# if coins.count(0) < coins.count(1): print(coins.count(0))
-# else: print(coins.count(1))
+if coins.count(0) < coins.count(1): print(coins.count(0))
+else: print(coins.count(1))
 
 
 
 ''' Вариант 4.1 '''
-# # 01_(C-03) 00:26:30 (Александар Верзун)
+# 01_(C-03) 00:26:30 (Александар Верзун)
 
-# coins = [0, 1, 0, 1, 0, 0]
-# print(f'coins = {coins}')
+coins = [0, 1, 0, 1, 0, 0]
+print(f'coins = {coins}')
 
-# res = [coins.count(0), coins.count(1)]
-# print(min(res))
+res = [coins.count(0), coins.count(1)]
+print(min(res))
 
 
 
 ''' Вариант 4.2 '''
-# # 01_(C-03) 00:27:40 (Александар Верзун)
+# 01_(C-03) 00:27:40 (Александар Верзун)
 
-# coins = [0, 1, 0, 1, 0, 0]
-# print(coins)
-# a = 0
-# b = 0
+coins = [0, 1, 0, 1, 0, 0]
+print(coins)
+a = 0
+b = 0
 
-# for i in coins:
-# 	if i == 0: a += 1
-# 	else: b += 1
-# if a < b: print(a)
-# else: print(b)
+for i in coins:
+	if i == 0: a += 1
+	else: b += 1
+if a < b: print(a)
+else: print(b)
 
 
 
@@ -122,73 +122,73 @@
 Он называет сумму этих чисел S и их произведение P. 
 Помогите Кате отгадать задуманные Петей числа.'''
 
-# # 4 4 -> 2 2
-# # 5 6 -> 2 3
+# 4 4 -> 2 2
+# 5 6 -> 2 3
 
 ''' Вариант 1 '''
 
-# s = int(input('s = ', ))
-# p = int(input('p = ', ))
+s = int(input('s = ', ))
+p = int(input('p = ', ))
 
-# # print(f's = {s}')
-# # print(f'p = {p}')
+# print(f's = {s}')
+# print(f'p = {p}')
 
-# # summa = 20
-# # product = 100
-# # s = int(summa)
-# # p = int(product)
+# summa = 20
+# product = 100
+# s = int(summa)
+# p = int(product)
 
-# # s = a + b 
-# # b = s - a
-# for a in range(s):
-#     if p == a * (s - a):
-#         b = s - a
-# print(a, b)
+# s = a + b 
+# b = s - a
+for a in range(s):
+    if p == a * (s - a):
+        b = s - a
+print(a, b)
 
 
 ''' Вариант 2 '''
 # Код не работает, разобраться
 
-# s = int(input('Input S: ', ))
-# p = int(input('Input P: ', ))
+s = int(input('Input S: ', ))
+p = int(input('Input P: ', ))
 
-# # x + y = s
-# x = 0
-# y = s - x
-# if x + y == s and x * (s - x) == p: print(x, y)
-# else: x += 1 
+# x + y = s
+x = 0
+y = s - x
+if x + y == s and x * (s - x) == p: print(x, y)
+else: x += 1 
 
 
 ''' Вариант 3 '''
-# # 01_(C-03) 00:16:30
-# # Решение с семинарского занятия (Алёна Хахина)
-# # "print" выдаёт ошибку
+# 01_(C-03) 00:16:30
+# Решение с семинарского занятия (Алёна Хахина)
+# "print" выдаёт ошибку
 
-# s = int(input('Input summa S: \n')) # "\n" с переносом значения на новую строку
-# p = int(input('Input product P: \n')) # "\n" с переносом значения на новую строку
-# for x in range(s):
-# 	for y in range(p):
-# 		if s == x + y and p == x * y:
-# print(f'first number = {x}, second number = {y}')
-# print(x, y)
+s = int(input('Input summa S: \n')) # "\n" с переносом значения на новую строку
+p = int(input('Input product P: \n')) # "\n" с переносом значения на новую строку
+for x in range(s):
+	for y in range(p):
+		if s == x + y and p == x * y: 
+			print(f'first number = {x}, second number = {y}')        
+print(x, y)
 
 
 """ Вариант 4 """
-# # 01_(C-03) 00:23:55
-# # Эталонное решение задачи из автотеста
+# 01_(C-03) 00:23:55
+# Эталонное решение задачи из автотеста
 
-# s = int(input('Input summa S: \n')) # Добавил ввод данных 
-# p = int(input('Input product P: \n'))
+s = int(input('Input summa S: \n')) # Добавил ввод данных 
+p = int(input('Input product P: \n'))
 
-# solutions = []
-# for i in range(1, 1001):
-# 	for j in range(1, 1001):
-# 		if s == i + j and p == i * j:
-# 			solutions.append((min(i, j), max(i, j)))
-# solutions = list(set(solutions))
+solutions = []
+for i in range(1, 1001):
+	for j in range(1, 1001):
+		if s == i + j and p == i * j:
+			solutions.append((min(i, j), max(i, j)))
+solutions = list(set(solutions))
 
-# for solution in solutions:
-# 	print(solution[0], solution[1])
+for solution in solutions:
+	print(solution[0], solution[1])
 
 
 ''' Задача 14:
@@ -204,7 +204,8 @@
 
 # Пример
 # n=16
-# # Вывод
+
+# Вывод
 # 1
 # 2
 # 4
@@ -213,24 +214,24 @@
 
 ''' Вариант 1 '''
 
-# n = int(input('n = ', ))
-# k = 0
-# while 2**k < n: 
-#     print(2**k)
-#     k += 1
+n = int(input('n = ', ))
+k = 0
+while 2**k < n: 
+    print(2**k)
+    k += 1
 
 
 ''' Вариант 2 '''
 # # 01_(C-03) 00:29:45 (Александар Верзун)
 
-# n = int(input('n = ', ))
-# temp = 1
-# count = 1
+n = int(input('n = ', ))
+temp = 1
+count = 1
 
-# while temp <= n:
-# 	print(temp, end = " ")
-# 	temp = 2**count
-# 	count += 1
+while temp <= n:
+	print(temp, end = " ")
+	temp = 2**count
+	count += 1
 
 
 
@@ -251,23 +252,23 @@
 Каждое число – среднесуточная температура в соответствующий день. 
 Температуры – целые числа и лежат в диапазоне от –50 до 50."""
 
-# # Input: 6 -> -20 30 -40 50 10 -10
-# # Output: 2
+# Input: 6 -> -20 30 -40 50 10 -10
+# Output: 2
 
-# n = int(input())
-# t = []
-# for i in range(n):
-# 	t.append(random.randint(-50, 50)) # "randint" - что это? "ranking" - рейтинг?
-# print(t)
+n = int(input())
+t = []
+for i in range(n):
+	t.append(random.randint(-50, 50)) # "randint" - что это? "ranking" - рейтинг?
+print(t)
 
-# count1 = 0
-# result = 0
-# for i in range(len(t)):
-# 	if t[i] > 0: count1 += 1
-# 	if result < count1: result = count1
-# 	if t[i] <= 0: count1 = 0
-# 	print(t[i], count1, result)
-# print(result)
+count1 = 0
+result = 0
+for i in range(len(t)):
+	if t[i] > 0: count1 += 1
+	if result < count1: result = count1
+	if t[i] <= 0: count1 = 0
+	print(t[i], count1, result)
+print(result)
 
 
 
@@ -292,38 +293,41 @@
 
 ''' Вариант 1 '''
 
-# n = int(input()) # количество арбузов
-# mass = floats(input()) # масса арбуза (как в Python обозначают дроби?)
+import random
 
-# for i in range(n):
-# 	mass.append(random.randint(1, 10)) # "randint" - что это? "ranking" - рейтинг?
-# print(f'Input: {n} -> {mass}')
+n = int(input()) # количество арбузов
+mass = float(input()) # масса арбуза ("float" - дроби)
 
-# mass = []
-# m = int(mass)
-# max = m
-# min = m
+for i in range(n):
+	mass.append(random.randint(1, 10))  # (?) "append" не подсвечивается
+	                                    # "randint" - что это?                                                                            
+print(f'Input: {n} -> {mass}')
 
-# while n > 0:
-# 	m = int(input())
-# 	if m > max: max = m
-# 	if m < min: min = m
-# 	n -= 1
-# print(f'Output: {min}, {max}')
+mass = []
+m = int(mass)
+max = m
+min = m
+
+while n > 0:
+	m = int(input())
+	if m > max: max = m
+	if m < min: min = m
+	n -= 1
+print(f'Output: {min}, {max}')
 
 
 ''' Вариант 2 '''
-# # 01_(C-03) 00:34:45 (Андрей Лапотько)
+# 01_(C-03) 00:34:45 (Андрей Лапотько)
  
-# n = int(input())
-# m = []
-# for i in range(n):
-# 	m.append(random.randint(1, 16))
-# print(m)
+n = int(input())
+m = []
+for i in range(n):
+	m.append(random.randint(1, 16))
+print(m)
 
-# max_1 = min_1 = m[0]
-# for i in range(1, len(m)):
-# 	if m[i] > max_1: max_1 = m[i]
-# 	if m[i] < min_1: min_1 = m[i]
-# print('min: {}, max: {}'.format(min_1, max_1))
+max_1 = min_1 = m[0]
+for i in range(1, len(m)):
+	if m[i] > max_1: max_1 = m[i]
+	if m[i] < min_1: min_1 = m[i]
+print('min: {}, max: {}'.format(min_1, max_1))
 	
